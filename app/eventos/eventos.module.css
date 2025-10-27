@@ -1,0 +1,394 @@
+/* Eventos.module.css (ESTRUTURA DE ESPECIALIZADO - CORES DE EVENTOS) */
+
+/* 1. VARIÁVEIS DE COR: Usa :global(:root) para sobrescrever as variáveis globais do globals.css */
+:global(:root) {
+    --cor-principal: #FF4081;
+    /* Rosa Choque/Magenta Festivo */
+    --cor-secundaria: #4CAF50;
+    /* Verde Vibrante - Comunidade/Ação */
+    --cor-acento: #FFC107;
+    /* Amarelo Gema */
+    --cor-suporte: #03A9F4;
+    /* Azul Claro Vibrante - Título/Header Evento */
+    --cor-negociacao: #E91E63;
+    /* Vermelho/Cereja (Ícones de Info) */
+
+    /* Variáveis de suporte - Mantidas iguais ao globals/especializado */
+    --cor-destaque-txt: #1a1a1a;
+    --cor-cinza-claro: #f0f0f0;
+    --cor-cinza-btn: #6c757d;
+}
+
+/* 2. CLASSE DE BASE (.eventosRoot): Aplica os estilos de <body> localmente */
+.eventosRoot {
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: #f8f8f8;
+    /* Cor de fundo da página de eventos */
+    color: #333;
+}
+
+/* 3. CLASSE DE CONTEÚDO PRINCIPAL (.mainContent): Aplica o estilo de <main> localmente */
+.mainContent {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* === Header & Navegação === */
+.headerEventoContainer {
+    /* Usa a var global sobrescrita */
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.headerEventoContainer h1 {
+    font-size: 42px;
+    font-weight: 800;
+    /* Usa a var global sobrescrita */
+    color: var(--cor-acento);
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 3px solid white;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.headerEventoContainer p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.navMenu {
+    /* Cor mais escura de --cor-principal */
+    background-color: #e62c6d;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px;
+}
+
+.navMenu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 0 5px;
+}
+
+.navMenu a:hover {
+    text-decoration: underline;
+}
+
+/* === Conteúdo Principal - Layout em Colunas === */
+.eventContentGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.sidebar {
+    background-color: var(--cor-cinza-claro);
+    padding: 25px;
+    border-radius: 10px;
+    /* Usa a var global sobrescrita */
+    border-left: 5px solid var(--cor-suporte);
+}
+
+/* Títulos de Seção */
+.mainInfo h2,
+.sidebar h3 {
+    color: var(--cor-destaque-txt);
+    font-weight: 700;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.sidebar h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    /* Usa a var global sobrescrita */
+    border-bottom: 2px solid var(--cor-acento);
+    padding-bottom: 5px;
+}
+
+/* Descrição do Evento */
+.description p {
+    line-height: 1.8;
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.description ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.description ul li {
+    background-color: #f9f9f9;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    /* Usa a var global sobrescrita */
+    border-left: 4px solid var(--cor-negociacao);
+    font-size: 15px;
+}
+
+/* Detalhes do Evento (Ícones) */
+.infoBlock {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.infoItem i {
+    font-size: 24px;
+    /* Usa a var global sobrescrita */
+    color: var(--cor-suporte);
+    width: 30px;
+    text-align: center;
+}
+
+.infoItem strong {
+    /* Usa a var global sobrescrita */
+    color: var(--cor-negociacao);
+}
+
+/* === Sidebar - Botões e CTA === */
+.ctaContainer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Botão Ação Principal (Participar) - Verde Vibrante */
+.btnAcao {
+    /* Usa a var global sobrescrita */
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.btnAcao:hover {
+    background-color: #388e3c;
+}
+
+/* Botão BRFrete (Logística/Negociação) - Amarelo Gema */
+.btnFrete {
+    /* Usa a var global sobrescrita */
+    background-color: var(--cor-acento);
+    color: var(--cor-destaque-txt);
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
+}
+
+.btnFrete:hover {
+    background-color: #ffaa00;
+    color: var(--cor-destaque-txt);
+}
+
+/* Novo bloco para a cotação de frete rápida na Sidebar */
+.freteCotacaoBox {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    /* Usa a var global sobrescrita */
+    border: 2px solid var(--cor-acento);
+    margin-top: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.2);
+}
+
+.freteCotacaoBox label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cor-destaque-txt);
+    margin-bottom: 8px;
+}
+
+.freteCotacaoBox input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.btnCotar {
+    /* Usa a var global sobrescrita */
+    background-color: var(--cor-suporte);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    display: block;
+}
+
+.btnCotar:hover {
+    background-color: #0288d1;
+}
+
+.freteCotacaoResultado {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--cor-cinza-claro);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cor-destaque-txt);
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+
+/* Mapa de Localização (Placeholder) */
+.mapPlaceholder {
+    height: 200px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-style: italic;
+}
+
+/* Galeria de Fotos */
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.galleryImage {
+    width: 100%;
+    padding-top: 100%;
+    background-color: #ddd;
+    border-radius: 4px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.galleryImage:hover {
+    transform: scale(1.03);
+    z-index: 10;
+}
+
+/* === Rodapé === */
+.footerEvento {
+    /* Usa a var global sobrescrita */
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    font-family: 'Red Hat Display', sans-serif;
+    margin-top: 40px;
+}
+
+.footerEvento h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footerEvento ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerEvento ul li {
+    margin-bottom: 8px;
+}
+
+.footerEvento ul li a {
+    color: #ffb3c5;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footerEvento ul li a:hover {
+    color: white;
+}
+
+.footerBottom {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #ffb3c5;
+}
+
+/* === Responsividade === */
+@media (max-width: 900px) {
+    .eventContentGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .headerEventoContainer h1 {
+        font-size: 32px;
+    }
+
+    .navMenu {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navMenu {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navMenu a {
+        font-size: 14px;
+    }
+
+    .galleryGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

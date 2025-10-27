@@ -1,0 +1,368 @@
+/*
+ * Arquivo CSS Module CORRIGIDO para Next.js (metais.module.css)
+ * Apenas classes locais e variáveis encapsuladas em .metaisRoot.
+ * Estilos de elementos globais (body, footer, nav) foram removidos.
+*/
+
+/* 1. VARIÁVEIS DE COR: Encapsuladas na classe raiz 'metaisRoot' */
+.metaisRoot {
+    /* CORES TEMA METAIS/SUCATA */
+    --cor-principal: #002b5c;
+    /* Azul Escuro (BRFrete) - Logística */
+    --cor-secundaria: #0066cc;
+    /* Azul Vivo (Frete) - Logística */
+    --cor-metal-principal: #212529;
+    /* Grafite Escuro/Preto */
+    --cor-metal-destaque: #FFC107;
+    /* Amarelo Ouro Vivo */
+    --cor-metal-suporte: #A9A9A9;
+    /* Cinza Prata Suave */
+    --cor-negociacao: #F44336;
+    /* Vermelho (Alerta/Negociação) */
+    --cor-destaque-txt: #1a1a1a;
+    --cor-cinza-claro: #f0f0f0;
+    --cor-cinza-btn: #6c757d;
+    --cor-metal-fundo: #FAFAFA;
+}
+
+/* 2. Banner Específico */
+.metaisBannerContainer {
+    position: relative;
+    background-color: var(--cor-metal-principal);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.2)),
+        radial-gradient(at 50% 100%, rgba(255, 255, 255, 0.05), transparent);
+    border-bottom: 5px solid var(--cor-metal-destaque);
+}
+
+.metaisBannerContainer h1 {
+    font-size: 42px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+.metaisBannerContainer h1 i {
+    font-size: 50px;
+    color: var(--cor-metal-destaque);
+}
+
+.metaisBannerContainer p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #ccc;
+    margin-bottom: 0;
+}
+
+/* 3. Formulário de Frete Específico */
+.metaisFreteForm {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.metaisFreteForm input {
+    padding: 12px 16px;
+    border-radius: 4px;
+    border: none;
+    font-size: 15px;
+    width: 180px;
+    flex-grow: 1;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.metaisFreteForm button {
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 102, 204, 0.4);
+    transition: background-color 0.3s ease;
+}
+
+.metaisFreteForm button:hover {
+    background-color: #005bb5;
+}
+
+
+/* 4. Conteúdo Principal Específico */
+.metaisMain {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.metaisMain h2 {
+    font-size: 32px;
+    color: var(--cor-metal-principal);
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 4px solid var(--cor-metal-destaque);
+    padding-bottom: 10px;
+    font-weight: 800;
+}
+
+/* 5. Balcão de Negociação (4 cards) */
+.negociacaoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.negociacaoCard {
+    background-color: var(--cor-metal-fundo);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border: 2px solid var(--cor-metal-suporte);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.negociacaoCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--cor-metal-destaque);
+}
+
+.cardDestaque {
+    border-color: var(--cor-metal-destaque);
+    background-color: #fffaf0;
+}
+
+.negociacaoCard h3 {
+    font-size: 20px;
+    color: var(--cor-metal-principal);
+    margin-top: 0;
+    font-weight: 800;
+}
+
+.negociacaoCard p {
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 50px;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.negociacaoIcon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: var(--cor-metal-principal);
+}
+
+.cardDestaque .negociacaoIcon {
+    color: var(--cor-metal-destaque);
+}
+
+/* ... dentro de app/metais/metais.module.css ... */
+
+/* 6. Estilos Botões Específicos do Marketplace */
+.btnAcao {
+    /* Mantém os estilos do btn-acao */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: block;
+    margin-top: auto;
+    line-height: 1.2;
+}
+
+/* Botão Destaque Principal (VENDER/SUCATA - Amarelo Ouro) */
+.btnVender {
+    background-color: var(--cor-metal-destaque);
+    color: white;
+    box-shadow: 0 6px 15px rgba(255, 193, 7, 0.7);
+}
+
+.btnVender:hover {
+    background-color: #ffaa00;
+    transform: translateY(-2px);
+}
+
+/* Botão Secundário (COMPRAR/BUSCAR - Grafite Escuro) */
+.btnComprar {
+    background-color: var(--cor-metal-principal);
+    color: white;
+    box-shadow: 0 4px 10px rgba(33, 37, 41, 0.5);
+}
+
+.btnComprar:hover {
+    background-color: #1a1a1a;
+}
+
+/* Botão Negociação de Frete (Vermelho Alerta) */
+.btnNegociar {
+    background-color: var(--cor-negociacao);
+    color: white;
+    box-shadow: 0 4px 10px rgba(244, 67, 54, 0.5);
+}
+
+.btnNegociar:hover {
+    background-color: #d32f2f;
+}
+
+/* Botão Frete Integrado (Azul Padrão BRFrete) - AGORA LOCAL */
+.btnIntegrado {
+    background-color: var(--cor-secundaria);
+    color: white;
+}
+
+.btnIntegrado:hover {
+    background-color: #004c99;
+}
+
+/* Botão Combinado (Cinza Suporte) - AGORA LOCAL */
+.btnCombinado {
+    background-color: var(--cor-metal-suporte) !important;
+    color: white !important;
+}
+
+.btnCombinado:hover {
+    background-color: #999999 !important;
+}
+
+/* ... o restante do arquivo (seção 7 em diante) ... */
+/* 7. Seção de Flexibilidade de Frete */
+.freteFlexibility {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.freteOption {
+    flex-basis: 48%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--cor-cinza-claro);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--cor-secundaria);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.freteOption:nth-child(2) {
+    border-top-color: var(--cor-metal-principal);
+}
+
+
+.freteOption i {
+    font-size: 40px;
+    color: var(--cor-secundaria);
+    margin-bottom: 10px;
+}
+
+.freteOption:nth-child(2) i {
+    color: var(--cor-metal-principal);
+}
+
+.freteOption h4 {
+    color: var(--cor-destaque-txt);
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.freteOption p {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+
+/* 8. Estilos Específicos do Rodapé (Cotações) */
+.cotacaoValorStrong strong {
+    color: var(--cor-metal-destaque);
+}
+
+.cotacaoCaretUp {
+    color: #4CAF50;
+}
+
+.cotacaoCaretDown {
+    color: var(--cor-negociacao);
+}
+
+
+/* 9. Responsividade (Apenas classes locais e específicas do módulo) */
+@media (max-width: 768px) {
+
+    .negociacaoGrid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    @media (max-width: 450px) {
+        .negociacaoGrid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .freteFlexibility {
+        flex-direction: column;
+    }
+
+    .freteOption {
+        flex-basis: 100%;
+    }
+
+    .metaisMain {
+        padding: 10px;
+    }
+
+    .metaisBannerContainer h1 {
+        font-size: 32px;
+    }
+
+    .metaisBannerContainer h1 i {
+        font-size: 40px;
+    }
+
+    .metaisMain h2 {
+        font-size: 24px;
+    }
+
+    .btnAcao {
+        padding: 10px 15px;
+        font-size: 12px;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .negociacaoCard {
+        padding: 15px;
+    }
+}

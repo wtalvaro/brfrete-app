@@ -1,0 +1,498 @@
+/* app/agronegocio/agronegocio.module.css */
+
+/* === Cores do estilo Agronegócio === */
+:root {
+    /* CORES LOGÍSTICA/BASE */
+    --cor-principal: #002b5c;
+    /* Azul Escuro (BRFrete) - Mantido para Footer */
+    --cor-secundaria: #0066cc;
+    /* Azul Vivo (Frete) - Mantido para Botões Padrão */
+
+    /* NOVAS CORES: Logística Rural, Terra e Pequeno Comércio */
+    --cor-agronegocio: #228B22;
+    /* Verde Floresta/Escuro (Terra, Colheita) */
+    --cor-sustentavel: #FFA500;
+    /* Laranja (Foco em Insumos, Energia e Renda) */
+    --cor-destaque-txt: #1a1a1a;
+    /* Preto Suave */
+    --cor-cinza-claro: #f0f0f0;
+    /* Cor de card da Home */
+    --cor-cinza-btn: #6c757d;
+    /* Cinza para botão secundário/combinado */
+    --cor-navegacao: #8B4513;
+    /* Marrom Terra para a barra de navegação */
+}
+
+/* Fonte principal para o corpo do conteúdo */
+.main {
+    /* CORRIGIDO: de 'main' para CLASSE '.main' */
+    font-family: 'Poppins', sans-serif;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main h2 {
+    font-size: 32px;
+    color: var(--cor-destaque-txt);
+    margin-bottom: 25px;
+    text-align: center;
+    /* Borda do H2: Verde Floresta */
+    border-bottom: 4px solid var(--cor-agronegocio);
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.section {
+    margin-top: 50px;
+}
+
+/* === Banner (ALTERADO PARA VERDE FLORESTA) === */
+.bannerContainer {
+    /* CORRIGIDO: de 'banner-container' para '.bannerContainer' (CamelCase) */
+    position: relative;
+    /* NOVO: Verde Floresta (Terra, Campo) */
+    background-color: var(--cor-agronegocio);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.bannerContainer h1 {
+    font-size: 38px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bannerContainer h1 i {
+    font-size: 45px;
+    /* NOVO: Ícone Laranja (Colheita/Renda) */
+    color: var(--cor-sustentavel);
+}
+
+/* Login Box */
+.loginBox {
+    /* CORRIGIDO: de 'login-box' para '.loginBox' (CamelCase) */
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.loginBox a {
+    background-color: #004080;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.loginBox a:hover {
+    background-color: #002b5c;
+}
+
+/* Nav Bar (ALTERADO PARA MARROM TERRA) */
+.navBar {
+    /* CORRIGIDO: de 'nav' para CLASSE '.navBar' */
+    /* NOVO: Marrom Terra */
+    background-color: var(--cor-navegacao);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+}
+
+.navBar a {
+    /* CORRIGIDO: de 'nav a' para '.navBar a' */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.navBar a:hover {
+    text-decoration: underline;
+}
+
+/* Formulário de Frete (Adaptado para Volume Rural) */
+.freteForm {
+    /* CORRIGIDO: de 'frete-form' para '.freteForm' (CamelCase) */
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.freteForm input {
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    width: 180px;
+    flex-grow: 1;
+}
+
+.freteForm button {
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.freteForm button:hover {
+    background-color: #004c99;
+}
+
+/* === Balcão de Negociação (4 cards) === */
+.negociacaoGrid {
+    /* CORRIGIDO: de 'negociacao-grid' para '.negociacaoGrid' (CamelCase) */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.negociacaoCard {
+    /* CORRIGIDO: de 'negociacao-card' para '.negociacaoCard' (CamelCase) */
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    /* Borda principal é Verde Escuro */
+    border: 2px solid var(--cor-agronegocio);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.negociacaoCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    /* Hover em Laranja de Renda */
+    border-color: var(--cor-sustentavel);
+}
+
+.cardDestaque {
+    /* CORRIGIDO: de 'card-destaque' para '.cardDestaque' (CamelCase) */
+    border-color: var(--cor-sustentavel);
+    background-color: #fffaf0;
+    /* Fundo levemente laranja/creme */
+}
+
+.negociacaoCard h3 {
+    font-size: 20px;
+    color: var(--cor-destaque-txt);
+    margin-top: 0;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+.negociacaoCard p {
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 50px;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.negociacaoIcon {
+    /* CORRIGIDO: de 'negociacao-icon' para '.negociacaoIcon' (CamelCase) */
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: var(--cor-agronegocio);
+}
+
+.cardDestaque .negociacaoIcon {
+    color: var(--cor-sustentavel);
+}
+
+/* === Estilos Comuns de Botão (Padrão Home) === */
+.btn,
+.btnAcao {
+    /* CORRIGIDO: de 'btn-acao' para '.btnAcao' (CamelCase) */
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #004c99;
+}
+
+/* Estilos Botões Específicos do Agronegócio */
+.btnAcao {
+    display: block;
+    margin-top: auto;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+/* Botão Destaque Principal (Publicar Carga) - Laranja */
+.btnCarga {
+    /* CORRIGIDO: de 'btn-carga' para '.btnCarga' (CamelCase) */
+    background-color: var(--cor-sustentavel);
+    color: var(--cor-destaque-txt);
+    font-weight: 800;
+    box-shadow: 0 6px 15px rgba(255, 165, 0, 0.5);
+}
+
+.btnCarga:hover {
+    background-color: #e69500;
+}
+
+/* Botão Secundário (Buscar Compartilhado) - Verde Escuro */
+.btnCompartilhado {
+    /* CORRIGIDO: de 'btn-compartilhado' para '.btnCompartilhado' (CamelCase) */
+    background-color: var(--cor-agronegocio);
+    color: white;
+    box-shadow: 0 4px 10px rgba(34, 139, 34, 0.4);
+}
+
+.btnCompartilhado:hover {
+    background-color: #1e751e;
+}
+
+/* Botão Local/Emergência (Azul Vivo - Frete Padrão) */
+.btnLocal {
+    /* CORRIGIDO: de 'btn-local' para '.btnLocal' (CamelCase) */
+    background-color: var(--cor-secundaria);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 102, 204, 0.4);
+}
+
+.btnLocal:hover {
+    background-color: #004c99;
+}
+
+/* Botão Combinado (Laranja para Combinação Comunitária) */
+.btnCombinado {
+    /* CORRIGIDO: de 'btn-combinado' para '.btnCombinado' (CamelCase) */
+    background-color: var(--cor-sustentavel) !important;
+    color: var(--cor-destaque-txt) !important;
+    font-weight: 800;
+    box-shadow: 0 4px 10px rgba(255, 165, 0, 0.4);
+}
+
+.btnCombinado:hover {
+    background-color: #e69500 !important;
+    color: white !important;
+}
+
+
+/* === Seção de Frete Fracionado e Combinado === */
+.freteFlexibility {
+    /* CORRIGIDO: de 'frete-flexibility' para '.freteFlexibility' (CamelCase) */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.freteOption {
+    /* CORRIGIDO: de 'frete-option' para '.freteOption' (CamelCase) */
+    flex-basis: 48%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--cor-cinza-claro);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Borda: Verde Floresta */
+    border-top: 5px solid var(--cor-agronegocio);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Destaque para a Opção Compartilhada (Laranja) */
+.freteOption:nth-child(2) {
+    border-top-color: var(--cor-sustentavel);
+}
+
+
+.freteOption i {
+    font-size: 40px;
+    color: var(--cor-agronegocio);
+    margin-bottom: 10px;
+}
+
+.freteOption:nth-child(2) i {
+    color: var(--cor-sustentavel);
+}
+
+.freteOption h4 {
+    color: var(--cor-destaque-txt);
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.freteOption p {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+
+/* === Rodapé e Responsividade === */
+.footer {
+    /* CORRIGIDO: de 'footer' para CLASSE '.footer' */
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.footer h4 {
+    /* CORRIGIDO: de 'footer h4' para '.footer h4' */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer ul li a {
+    /* CORRIGIDO: de 'footer ul li a' para '.footer ul li a' */
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer ul li a:hover {
+    color: white;
+}
+
+.footerBottom {
+    /* CORRIGIDO: de 'footer-bottom' para '.footerBottom' (CamelCase) */
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+
+    .loginBox {
+        /* CORRIGIDO: de 'login-box' para '.loginBox' */
+        position: static;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .navBar {
+        /* CORRIGIDO: de 'nav' para '.navBar' */
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .navBar a {
+        /* CORRIGIDO: de 'nav a' para '.navBar a' */
+        font-size: 14px;
+    }
+
+    .freteForm {
+        /* CORRIGIDO: de 'frete-form' para '.freteForm' */
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .freteForm input,
+    .freteForm button {
+        width: 90%;
+    }
+
+    .negociacaoGrid {
+        /* CORRIGIDO: de 'negociacao-grid' para '.negociacaoGrid' */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    @media (max-width: 450px) {
+        .negociacaoGrid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .freteFlexibility {
+        /* CORRIGIDO: de 'frete-flexibility' para '.freteFlexibility' */
+        flex-direction: column;
+    }
+
+    .freteOption {
+        /* CORRIGIDO: de 'frete-option' para '.freteOption' */
+        flex-basis: 100%;
+    }
+
+    .main {
+        /* CORRIGIDO: de 'main' para '.main' */
+        padding: 10px;
+    }
+
+    .bannerContainer h1 {
+        /* CORRIGIDO: de 'banner-container h1' para '.bannerContainer h1' */
+        font-size: 26px;
+    }
+
+    .main h2 {
+        font-size: 24px;
+    }
+
+    .btn,
+    .btnAcao {
+        /* CORRIGIDO: de 'btn-acao' para '.btnAcao' */
+        padding: 10px 15px;
+        font-size: 12px;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .negociacaoCard {
+        /* CORRIGIDO: de 'negociacao-card' para '.negociacaoCard' */
+        padding: 15px;
+    }
+}

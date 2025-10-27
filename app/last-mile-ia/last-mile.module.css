@@ -1,0 +1,432 @@
+/* app/last-mile-ia/last-mile.module.css */
+
+/* === VARIÁVEIS DE COR ESPECÍFICAS DESTE MÓDULO === */
+:root {
+    /* Cores que devem estar no globals.css (Base) */
+    --cor-principal: #003366;
+    --cor-secundaria-nav: #004c99;
+    --cor-destaque-txt: #1a1a1a;
+    --cor-cinza-card-fundo: #f8f8ff;
+
+    /* CORES MACHINE LEARNING (CORPORATIVAS/SÓBRIAS) */
+    --cor-ml-principal: #004D80;
+    /* Azul Meia-Noite Profundo (Inteligência, Dados) */
+    --cor-ml-acento: #00A86B;
+    /* Verde Esmeralda Sóbrio (Otimização, Sucesso) */
+}
+
+/* === Banner (Padrão Home) === */
+.banner-container {
+    position: relative;
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 60px 20px 80px 20px;
+    text-align: center;
+}
+
+.banner-container h1 {
+    font-size: 45px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 5px;
+    color: white;
+    /* Assumindo que '--font-poppins' está no body via layout.tsx */
+    font-family: var(--font-poppins), sans-serif;
+}
+
+/* Ícone: Usa o ACENTO SÓBRIO (Verde Esmeralda) */
+.banner-container h1 i {
+    font-size: 55px;
+    color: var(--cor-ml-acento);
+    text-shadow: 0 0 10px rgba(0, 168, 107, 0.6);
+}
+
+.banner-container p {
+    font-size: 19px;
+    font-weight: 400;
+    color: #ddd;
+    margin-bottom: 40px;
+}
+
+/* Login Box (Padrão Home) */
+.login-box {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Usa a cor principal do Machine Learning para o login */
+.login-box a {
+    background-color: var(--cor-ml-principal);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.login-box a:hover {
+    background-color: #003b66;
+}
+
+/* === Navegação (NAV) - Refatorado === */
+/* Antes: nav { ... } */
+.nav-bar {
+    /* Novo seletor de classe local */
+    background-color: var(--cor-secundaria-nav);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+}
+
+.nav-bar a {
+    /* Agora aninhado sob a classe local */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+    /* Agora aninhado sob a classe local */
+    color: var(--cor-ml-acento);
+}
+
+/* Formulário/CTA no Banner */
+.frete-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.frete-form input {
+    padding: 12px 16px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    width: 300px;
+    flex-grow: 1;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão CTA Principal: Usa a nova COR PRINCIPAL (Azul Meia-Noite) */
+.frete-form button,
+.cta-destaque {
+    background-color: var(--cor-ml-principal);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 77, 128, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.frete-form button:hover,
+.cta-destaque:hover {
+    background-color: #003b66;
+    box-shadow: 0 6px 15px rgba(0, 77, 128, 0.6);
+}
+
+/* === Conteúdo Principal - Refatorado === */
+/* Antes: main { ... } */
+.main-content {
+    /* NOVIDADE: Classe .main-content substitui a tag 'main' */
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Antes: main h2 { ... } */
+.main-content h2 {
+    /* AGORA CORRIGIDO: Aninhado sob a classe .main-content */
+    font-size: 32px;
+    color: var(--cor-principal);
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.section {
+    margin-top: 50px;
+}
+
+/* Título da seção: Usa a nova COR PRINCIPAL (Azul Meia-Noite) */
+.section h3 {
+    font-size: 24px;
+    color: var(--cor-destaque-txt);
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    border-bottom: 3px solid var(--cor-ml-principal);
+    padding-bottom: 5px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === Cards (Estilo Adaptado) === */
+.cards,
+.flex-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: var(--cor-cinza-card-fundo);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 260px;
+    border-top: 5px solid var(--cor-ml-principal);
+    /* Azul Meia-Noite */
+}
+
+/* Estilo para a seção de 2 cards (Fluxo): Usa o ACENTO (Verde Esmeralda) */
+.flex-cards .card {
+    flex-basis: 45%;
+    width: auto;
+    min-width: 300px;
+    border-top: 5px solid var(--cor-ml-acento);
+    /* Verde Esmeralda */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Título do Card: Usa a nova COR PRINCIPAL (Azul Meia-Noite) */
+.card h4 {
+    margin: 10px 0;
+    color: var(--cor-ml-principal);
+    /* Azul Meia-Noite */
+    font-weight: 700;
+    font-size: 18px;
+    min-height: 40px;
+}
+
+.card p {
+    font-size: 14px;
+    min-height: 40px;
+    flex-grow: 1;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Ícone Padrão: Usa a nova COR PRINCIPAL (Azul Meia-Noite) */
+.card i {
+    color: var(--cor-ml-principal);
+    /* Azul Meia-Noite */
+    margin-bottom: 10px;
+    font-size: 35px !important;
+}
+
+/* Ícone de Destaque: Usa o ACENTO (Verde Esmeralda) */
+.flex-cards .card i {
+    color: var(--cor-ml-acento);
+    /* Verde Esmeralda */
+}
+
+/* Botão do Card Padrão: Usa a nova COR PRINCIPAL (Azul Meia-Noite) */
+.card-btn {
+    background-color: var(--cor-ml-principal);
+    /* Azul Meia-Noite */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin-top: auto;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: #003b66;
+}
+
+/* Botão de Destaque ACENTO: Usa o ACENTO (Verde Esmeralda) */
+.card-btn-acento {
+    background-color: var(--cor-ml-acento);
+    /* Verde Esmeralda */
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 168, 107, 0.6);
+    font-weight: 800;
+}
+
+.card-btn-acento:hover {
+    background-color: #008756;
+    /* Um pouco mais escuro */
+    color: white;
+    box-shadow: 0 6px 15px rgba(0, 168, 107, 0.8);
+}
+
+
+/* Seção CTA de Rodapé */
+.cta-buttons {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.cta-buttons a.cta-destaque {
+    padding: 14px 30px;
+    font-size: 18px;
+    font-weight: 800;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+
+/* === Rodapé (FOOTER) - Refatorado === */
+/* Antes: footer { ... } */
+.footer-area {
+    /* Novo seletor de classe local */
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    font-family: var(--font-red-hat-display), sans-serif;
+}
+
+/* Antes: footer h4 { ... } */
+.footer-area h4 {
+    /* Agora aninhado sob a classe local */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Antes: footer ul { ... } */
+.footer-area ul {
+    /* Agora aninhado sob a classe local */
+    list-style: none;
+    padding: 0;
+}
+
+/* Antes: footer ul li { ... } */
+.footer-area ul li {
+    /* Agora aninhado sob a classe local */
+    margin-bottom: 8px;
+}
+
+/* Antes: footer ul li a { ... } */
+.footer-area ul li a {
+    /* Agora aninhado sob a classe local */
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Antes: footer ul li a:hover { ... } */
+.footer-area ul li a:hover {
+    /* Agora aninhado sob a classe local */
+    color: white;
+}
+
+.footer-bottom {
+    /* Mantido - já era uma classe */
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* === Responsividade (Padrão Home) === */
+@media (max-width: 768px) {
+    .banner-container h1 {
+        font-size: 32px;
+    }
+
+    .banner-container p {
+        font-size: 16px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .flex-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flex-cards .card {
+        flex-basis: 100%;
+        min-width: unset;
+    }
+
+    /* Antes: nav { ... } */
+    .nav-bar {
+        /* Aplicando à nova classe */
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    /* Antes: nav a { ... } */
+    .nav-bar a {
+        /* Aplicando à nova classe aninhada */
+        font-size: 14px;
+    }
+
+    .frete-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .frete-form input,
+    .frete-form button {
+        width: 90%;
+    }
+
+    /* CORREÇÃO APLICADA AQUI: Substituímos 'footer' por '.footer-area' */
+    .footer-area {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .cta-buttons a.cta-destaque {
+        width: 90%;
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+}

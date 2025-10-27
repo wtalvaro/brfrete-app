@@ -1,0 +1,502 @@
+/* app/rural/rural.module.css */
+
+/* Cores do estilo FRETE RURAL (Foco em Produtor Familiar, Confiança e Custo) */
+:root {
+    /* Principal: MARROM TERRA PROFUNDO (Confiança, Solo, Rural) - NOVO */
+    --cor-principal: #4B3621;
+    /* Secundária: VERDE FLORESTA (Natureza, Sustento, Comunidade) - NOVO */
+    --cor-secundaria: #228B22;
+
+    /* NOVAS CORES: Rural e Acento Acessível */
+    /* Acento Principal: Dourado Terroso (Valor do Produto, Custo-Benefício) */
+    --cor-foco-rural: #D4AF37;
+    /* Terra/Bege Suave (Fundo, Confiança) */
+    --cor-confianca-rural: #F5DEB3;
+    /* Laranja Escuro (Urgência Acessível, Manutenção) */
+    --cor-urgencia-rural: #CC5500;
+    --cor-destaque-txt: #1a1a1a;
+    /* Preto Suave */
+    --cor-cinza-claro: #f0f0f0;
+    --cor-cinza-btn: #6c757d;
+    /* Cores do Footer (Padrão Home) */
+    --cor-footer-link: #ccc;
+    --cor-footer-hover: white;
+}
+
+/* === Base === */
+.body {
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Fonte principal para o corpo do conteúdo */
+.mainContent {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mainContent h2 {
+    font-size: 32px;
+    color: var(--cor-destaque-txt);
+    margin-bottom: 25px;
+    text-align: center;
+    /* Destaque para o Tema: Verde Floresta */
+    border-bottom: 4px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+/* === Banner (Adaptado para o Tema) === */
+.bannerContainer {
+    position: relative;
+    /* Cor do Banner: MARROM TERRA PROFUNDO */
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    /* Gradiente do Marrom mais claro para o Marrom mais escuro */
+    background-image: linear-gradient(135deg, #6B4D31 0%, var(--cor-principal) 100%);
+}
+
+.bannerContainer h1 {
+    font-size: 38px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bannerContainer h1 i {
+    font-size: 45px;
+    /* COR DO ÍCONE AJUSTADA PARA O Dourado Terroso */
+    color: var(--cor-foco-rural);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+
+/* Login Box (login-box) */
+.loginBox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.loginBox a {
+    /* Botões em Verde Floresta */
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.loginBox a:hover {
+    background-color: #1a6b1a;
+}
+
+/* Nav Bar (nav) - VERDE FLORESTA */
+.navBar {
+    /* Cor do Menu: VERDE FLORESTA */
+    background-color: var(--cor-secundaria);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+}
+
+.navBar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.navBar a:hover {
+    text-decoration: underline;
+    /* Hover com o Dourado Terroso */
+    color: var(--cor-foco-rural);
+}
+
+/* Formulário de Frete (frete-form) */
+.freteForm {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.freteForm input {
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    width: 180px;
+    flex-grow: 1;
+}
+
+.freteForm button {
+    /* Botão Principal: Dourado Terroso */
+    background-color: var(--cor-foco-rural);
+    /* Cor do texto: Marrom Terra Profundo */
+    color: var(--cor-principal);
+    border: none;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(212, 175, 55, 0.6);
+    transition: background-color 0.3s ease;
+}
+
+.freteForm button:hover {
+    background-color: #c4a132;
+}
+
+/* === Conteúdo Principal === */
+.section {
+    margin-top: 50px;
+}
+
+/* === Balcão de Negociação (negociacao-grid) === */
+.negociacaoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.negociacaoCard {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    /* Borda do card: Verde Floresta */
+    border: 2px solid var(--cor-secundaria);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.negociacaoCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    /* Hover: Dourado Terroso */
+    border-color: var(--cor-foco-rural);
+}
+
+.cardDestaque {
+    /* Destaque: Dourado Terroso e Fundo Bege Suave */
+    border-color: var(--cor-foco-rural);
+    background-color: var(--cor-confianca-rural);
+}
+
+.negociacaoCard h3 {
+    font-size: 20px;
+    color: var(--cor-destaque-txt);
+    margin-top: 0;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+.negociacaoCard p {
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 50px;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.negociacaoIcon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    /* Ícone Padrão: Verde Floresta */
+    color: var(--cor-secundaria);
+}
+
+.cardDestaque .negociacaoIcon {
+    /* Ícone Destaque: Dourado Terroso */
+    color: var(--cor-foco-rural);
+}
+
+/* Estilos Comuns de Botão */
+.btn,
+.btnAcao {
+    /* Botões em Verde Floresta */
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #1a6b1a;
+}
+
+/* Estilos Botões Específicos (btn-acao) */
+.btnAcao {
+    display: block;
+    margin-top: auto;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+/* Botão Destaque Principal (btn-solicitar-rural) */
+.btnSolicitarRural {
+    background-color: var(--cor-foco-rural);
+    /* Texto Marrom Terra para contraste */
+    color: var(--cor-principal);
+    font-weight: 800;
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.5);
+}
+
+.btnSolicitarRural:hover {
+    background-color: #c4a132;
+}
+
+/* Botão Secundário (btn-rastrear) */
+.btnRastrear {
+    background-color: var(--cor-secundaria);
+    color: white;
+    font-weight: 800;
+    box-shadow: 0 4px 10px rgba(34, 139, 34, 0.4);
+}
+
+.btnRastrear:hover {
+    background-color: #1a6b1a;
+    color: white;
+}
+
+/* Botão Urgência/Manutenção (btn-urgencia-rural) */
+.btnUrgenciaRural {
+    background-color: var(--cor-urgencia-rural);
+    color: white;
+    font-weight: 800;
+    box-shadow: 0 4px 10px rgba(204, 85, 0, 0.4);
+}
+
+.btnUrgenciaRural:hover {
+    background-color: #b84c00;
+}
+
+/* Botão Padrão (btn-principal-rural) */
+.btnPrincipalRural {
+    background-color: var(--cor-principal) !important;
+    color: white !important;
+    font-weight: 800;
+    box-shadow: 0 4px 10px rgba(75, 54, 33, 0.4);
+}
+
+.btnPrincipalRural:hover {
+    background-color: #3b2a1a !important;
+    color: white !important;
+}
+
+
+/* === Seção de Flexibilidade de Frete (servicos-flex) === */
+.servicosFlex {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.servicoCard {
+    flex-basis: 48%;
+    padding: 30px;
+    border-radius: 10px;
+    /* Fundo levemente Bege Suave */
+    background-color: #fffaf0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Borda Dourado Terroso */
+    border-top: 5px solid var(--cor-foco-rural);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.servicoCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para o segundo card (Cadeia de Frio/Caminhões) */
+.servicoCard:nth-child(2) {
+    /* Borda Verde Floresta */
+    border-top-color: var(--cor-secundaria);
+    /* Fundo Verde Mais Claro */
+    background-color: #f0fff0;
+}
+
+
+.servicoCard i {
+    font-size: 40px;
+    /* Ícone Card 1: Dourado Terroso */
+    color: var(--cor-foco-rural);
+    margin-bottom: 10px;
+}
+
+/* Ícone do Card 2: Verde Floresta */
+.servicoCard:nth-child(2) i {
+    color: var(--cor-secundaria);
+}
+
+.servicoCard h4 {
+    color: var(--cor-destaque-txt);
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+.servicoCard p {
+    flex-grow: 1;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #555;
+}
+
+/* Título da Seção de Flexibilidade (titulo-flex) */
+.tituloFlex {
+    /* Destaque em Dourado Terroso */
+    color: var(--cor-foco-rural);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* Botões da seção Flexibilidade (btn-flex) */
+.btnFlex {
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: 800;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+    text-decoration: none;
+}
+
+/* Botão 1: Dourado Terroso (Grãos e Insumos) */
+.servicoCard:first-child .btnFlex {
+    background-color: var(--cor-foco-rural);
+    /* Texto Marrom Terra para contraste */
+    color: var(--cor-principal);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.5);
+}
+
+.servicoCard:first-child .btnFlex:hover {
+    background-color: #c4a132;
+    color: var(--cor-principal);
+}
+
+/* Botão 2: Verde Floresta (Cadeia de Frio) */
+.servicoCard:nth-child(2) .btnFlex {
+    background-color: var(--cor-secundaria);
+    color: white;
+    box-shadow: 0 4px 10px rgba(34, 139, 34, 0.4);
+}
+
+.servicoCard:nth-child(2) .btnFlex:hover {
+    background-color: #1a6b1a;
+}
+
+
+/* === Rodapé (footer) === */
+.footer {
+    /* Cor do Footer: MARROM TERRA PROFUNDO */
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    display: grid;
+    /* Força 5 colunas em telas maiores */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    font-family: 'Red Hat Display', sans-serif;
+    margin-top: 40px;
+}
+
+@media (max-width: 1200px) {
+
+    /* Adaptação para telas médias */
+    .footer {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Adaptação para telas menores */
+    .footer {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+.footer h4 {
+    font-size: 18px;
+    /* Cor do título: Padrão Home (Mantido Branco) */
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer ul li a {
+    /* Cor do Link: Padrão Home */
+    color: var(--cor-footer-link);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer ul li a:hover {
+    /* Cor do Hover: Padrão Home (Branco) */
+    color: var(--cor-footer-hover);
+}
+
+/* footer-bottom */
+.footerBottom {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}

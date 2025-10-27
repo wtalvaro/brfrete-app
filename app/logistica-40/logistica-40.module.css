@@ -1,0 +1,407 @@
+/* app/logistica-40/logistica-40.module.css */
+
+/* === VARIÁVEIS DE COR ESPECÍFICAS DESTE MÓDULO === */
+:root {
+    /* Cores que devem estar no globals.css (Base) */
+    --cor-principal: #003366;
+    /* Azul Marinho (Base/Footer) */
+    --cor-secundaria-nav: #004c99;
+
+    /* CORES LOGÍSTICA 4.0 (TONS SÓBRIOS/TECNOLÓGICOS) */
+    --cor-logistica-principal: #006064;
+    /* Ciano Escuro/Verde Água (Inteligência, Dados) - SÓBRIO */
+    --cor-logistica-acento: #FF7043;
+    /* Laranja Suave (Inovação, Alerta) */
+    --cor-logistica-suporte: #81C784;
+    /* Verde Claro (Eficiência, Sucesso) */
+    --cor-cinza-card-fundo: #f9f9f9;
+    --cor-destaque-txt: #1a1a1a;
+}
+
+/* === Banner 4.0 === */
+.bannerContainer {
+    /* Convertido de .banner-container */
+    position: relative;
+    background-color: var(--cor-logistica-principal);
+    color: white;
+    padding: 60px 20px 80px 20px;
+    text-align: center;
+}
+
+.bannerContainer h1 {
+    font-size: 45px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 5px;
+    color: white;
+    font-family: var(--font-poppins), sans-serif;
+}
+
+.bannerContainer h1 i {
+    font-size: 60px;
+    color: var(--cor-logistica-acento);
+    text-shadow: 0 0 10px rgba(255, 112, 67, 0.5);
+}
+
+.bannerContainer p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #eee;
+    margin-bottom: 30px;
+}
+
+/* === Login Box (Padrão) === */
+.loginBox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.loginBox a {
+    background-color: var(--cor-logistica-acento);
+    color: var(--cor-logistica-principal);
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+}
+
+.loginBox a:hover {
+    background-color: #ff5722;
+}
+
+
+/* === Formulário CTA (Padrão) === */
+.consultoriaForm {
+    /* Nova classe */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0px auto;
+    padding: 15px;
+    background-color: rgba(255, 112, 67, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.consultoriaForm input,
+.consultoriaForm select {
+    padding: 12px 16px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    width: 250px;
+    flex-grow: 1;
+}
+
+.consultoriaForm button {
+    background-color: var(--cor-logistica-acento);
+    color: var(--cor-logistica-principal);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.consultoriaForm button:hover {
+    background-color: #ff5722;
+    box-shadow: 0 4px 10px rgba(255, 112, 67, 0.4);
+}
+
+
+/* === Navegação (Padrão) === */
+.navBar {
+    background-color: var(--cor-logistica-principal);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 12px;
+}
+
+.navBar a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.navBar a:hover {
+    color: var(--cor-logistica-suporte);
+}
+
+/* === Conteúdo Principal === */
+.mainContent {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.mainContent h2 {
+    font-size: 30px;
+    color: var(--cor-logistica-principal);
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 800;
+    border-bottom: 3px solid var(--cor-logistica-acento);
+    padding-bottom: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === Cards de Pilares (4.0) === */
+.pilaresGrid {
+    /* Convertido de .pilares-grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.cardPilar {
+    /* Convertido de .card-pilar */
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--cor-logistica-suporte);
+}
+
+.cardPilar:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cardPilar i {
+    color: var(--cor-logistica-acento);
+    margin-bottom: 15px;
+    font-size: 45px;
+    display: block;
+}
+
+.cardPilar h4 {
+    margin: 10px 0;
+    color: var(--cor-logistica-principal);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.cardPilar p {
+    font-size: 15px;
+    color: #555;
+}
+
+/* === Seção de Estudo de Caso (Grid) === */
+.caseGrid {
+    /* Convertido de .case-grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 50px;
+    align-items: center;
+    background-color: var(--cor-cinza-card-fundo);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.caseGrid h3 {
+    font-size: 28px;
+    color: var(--cor-logistica-principal);
+    margin-bottom: 15px;
+    border-left: 5px solid var(--cor-logistica-acento);
+    padding-left: 15px;
+}
+
+.caseGrid p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.estatisticas {
+    /* Convertido de .estatisticas */
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.estatisticas div {
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: white;
+    flex-basis: 30%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.estatisticas h5 {
+    font-size: 32px;
+    color: var(--cor-logistica-acento);
+    margin: 0;
+    font-weight: 800;
+}
+
+.estatisticas span {
+    display: block;
+    font-size: 14px;
+    color: var(--cor-logistica-principal);
+    font-weight: 600;
+}
+
+.imagePlaceholder {
+    background-color: var(--cor-logistica-principal);
+    min-height: 300px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* === CTA Rodapé (Padrão) === */
+.ctaRodape {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+.ctaRodape a {
+    background-color: var(--cor-logistica-acento);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 800;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(255, 112, 67, 0.4);
+}
+
+.ctaRodape a:hover {
+    background-color: #ff5722;
+}
+
+/* === Rodapé (Padrão) === */
+.footerContainer {
+    /* Reutiliza a classe do padrão */
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    font-family: var(--font-red-hat-display), sans-serif;
+    margin-top: 40px;
+}
+
+.footerContainer h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footerContainer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerContainer ul li {
+    margin-bottom: 8px;
+}
+
+.footerContainer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footerContainer ul li a:hover {
+    color: white;
+}
+
+.footerBottom {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+    .bannerContainer h1 {
+        font-size: 32px;
+    }
+
+    .bannerContainer p {
+        font-size: 16px;
+    }
+
+    .loginBox {
+        position: static;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .consultoriaForm {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .consultoriaForm input,
+    .consultoriaForm select,
+    .consultoriaForm button {
+        width: 100%;
+    }
+
+    .pilaresGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .navBar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .caseGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .estatisticas {
+        flex-wrap: wrap;
+    }
+
+    .estatisticas div {
+        flex-basis: 45%;
+    }
+
+    .footerContainer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}

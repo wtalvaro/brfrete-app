@@ -1,0 +1,317 @@
+/* app/pesado/pesado.module.css */
+
+/* === VARIÁVEIS DE COR ESPECÍFICAS DESTE MÓDULO === */
+:global(:root) {
+    /* NOVO TEMA INDUSTRIAL/PESADO */
+    --cor-principal: #1a1a1a;
+    /* Preto Industrial (Fundo Principal/Banner/Footer) */
+    --cor-secundaria: #004c99;
+    /* Azul Marinho Escuro (Ações Padrão) */
+
+    /* NOVAS CORES: Força, Solidez e Indústria */
+    --cor-acento: #FF5722;
+    /* Laranja Queimado/Tijolo (Alerta, Força, Destaque CTA) */
+    --cor-suporte: #8BC34A;
+    /* Verde Industrial (Segurança, Confiabilidade) */
+    --cor-negociacao: #f8f8f8;
+    /* Branco Sujo (Contraste no texto) */
+    --cor-destaque-txt: #f8f8f8;
+    /* Cor de card da Home */
+    --cor-cinza-claro: #f0f0f0;
+    /* Cinza claro de fundo */
+    --cor-cinza-btn: #6c757d;
+    /* Cinza para botão secundário/combinado */
+}
+
+/* === Base === */
+.main {
+    font-family: var(--font-poppins), sans-serif;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* === Banner (Adaptado para o Tema Preto Industrial) === */
+.bannerContainer {
+    position: relative;
+    background-color: var(--cor-principal);
+    /* Preto Industrial */
+    color: white;
+    padding: 60px 20px 80px 20px;
+    text-align: center;
+}
+
+.bannerContainer h1 {
+    font-size: 38px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: var(--font-poppins), sans-serif;
+}
+
+/* Ícone: Laranja de Destaque */
+.bannerContainer h1 i {
+    font-size: 45px;
+    color: var(--cor-acento);
+}
+
+.bannerContainer p {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--cor-negociacao);
+    margin-bottom: 30px;
+}
+
+/* Login Box (Destaque Laranja no Preto) */
+.loginBox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.loginBox a {
+    /* Fundo Laranja para contraste máximo no banner preto */
+    background-color: var(--cor-acento);
+    color: var(--cor-destaque-txt);
+    /* Texto Branco/Claro */
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.loginBox a:hover {
+    background-color: #e64a19;
+}
+
+/* Nav Bar - Cor Azul Marinho Escuro */
+.navBar {
+    background-color: var(--cor-secundaria);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+}
+
+.navBar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navBar a:hover {
+    color: var(--cor-acento);
+    /* Laranja de Destaque no Hover */
+}
+
+/* Formulário de Frete Pesado */
+.freteForm {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 950px;
+    margin: 30px auto 0;
+}
+
+.freteForm input,
+.freteForm select {
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    width: 200px;
+    flex-grow: 1;
+}
+
+.freteForm button {
+    /* Botão Verde Industrial para forte destaque */
+    background-color: var(--cor-suporte);
+    color: var(--cor-principal);
+    /* Texto preto/escuro */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.freteForm button:hover {
+    background-color: #689f38;
+}
+
+/* Seção de Destaque */
+.sectionTitle {
+    font-size: 32px;
+    color: var(--cor-principal);
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.featureCard {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--cor-acento);
+    /* Laranja Destaque */
+}
+
+.featureCard:hover {
+    transform: translateY(-5px);
+}
+
+.featureCard i {
+    font-size: 50px;
+    color: var(--cor-suporte);
+    /* Verde Industrial */
+    margin-bottom: 15px;
+}
+
+.featureCard h3 {
+    font-size: 22px;
+    color: var(--cor-principal);
+    font-weight: 700;
+    margin-top: 0;
+}
+
+.featureCard p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* CTA - Logística Personalizada */
+.ctaContainer {
+    margin: 60px auto 40px auto;
+    padding: 40px;
+    background-color: var(--cor-cinza-claro);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #ddd;
+}
+
+.ctaContainer h2 {
+    color: var(--cor-principal);
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.ctaContainer a {
+    background-color: var(--cor-acento);
+    /* Laranja Destaque */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.4);
+}
+
+.ctaContainer a:hover {
+    background-color: #e64a19;
+    box-shadow: 0 6px 15px rgba(255, 87, 34, 0.6);
+}
+
+
+/* === Rodapé (Footer) - PADRÃO COMPLETO === */
+.footerContainer {
+    /* Utiliza a cor principal do tema: Preto Industrial */
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    font-family: var(--font-red-hat-display), sans-serif;
+    margin-top: 40px;
+}
+
+.footerContainer h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footerContainer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerContainer ul li {
+    margin-bottom: 8px;
+}
+
+.footerContainer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footerContainer ul li a:hover {
+    color: var(--cor-acento);
+    /* Destaque Laranja no Footer */
+}
+
+.footerBottom {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+    .bannerContainer h1 {
+        font-size: 30px;
+    }
+
+    .bannerContainer h1 i {
+        font-size: 35px;
+    }
+
+    .loginBox {
+        position: static;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .navBar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .freteForm {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

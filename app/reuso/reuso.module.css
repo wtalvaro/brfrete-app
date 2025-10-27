@@ -1,0 +1,486 @@
+/* app/reuso/reuso.module.css */
+
+/* === Cores do estilo: BRFRETE Padrão e TEMA REUSO OTIMIZADO === */
+:root {
+    /* CORES LOGÍSTICA/BASE */
+    --cor-principal: #002b5c;
+    /* Azul Escuro (BRFrete) - Logística */
+    --cor-secundaria: #0066cc;
+    /* Azul Vivo (Frete) - Logística */
+
+    /* NOVAS CORES TEMA REUSO: Baseado em Laranja e Terra */
+    --cor-reuso-principal: #ff9800;
+    /* Laranja (Terra, Vitalidade, Reuso) */
+    --cor-reuso-acento: #ffc107;
+    /* Amarelo Gema (Energia, Alerta/Destaque) */
+    --cor-reuso-suporte: #388e3c;
+    /* Verde Escuro (Sustentabilidade, Meio Ambiente) */
+    --cor-destaque-txt: #1a1a1a;
+    /* Preto Suave */
+    --cor-cinza-claro: #f0f0f0;
+    /* Cor de card */
+    --cor-cinza-btn: #6c757d;
+    /* Cinza para botão secundário/combinado */
+    --cor-fundo-banner: #fff3e0;
+    /* Fundo Claro do Banner */
+}
+
+/* Os estilos globais como `body` DEVEM ser movidos para globals.css ou layout.jsx/css */
+/* O seletor `:root` é mantido aqui e as variáveis ficam acessíveis no componente */
+
+/* Fonte principal para o corpo do conteúdo */
+.main {
+    /* Corrigido de seletor 'main' para CLASSE '.main' */
+    font-family: 'Poppins', sans-serif;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main h2 {
+    font-size: 32px;
+    color: var(--cor-destaque-txt);
+    margin-bottom: 25px;
+    text-align: center;
+    /* Borda do H2: Laranja Reuso */
+    border-bottom: 4px solid var(--cor-reuso-principal);
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.section {
+    margin-top: 50px;
+}
+
+/* === Banner (ALTERADO PARA TEMA CLARO DE REUSO) === */
+.bannerContainer {
+    position: relative;
+    /* Fundo Claro: Creme / Laranja Claro */
+    background-color: var(--cor-fundo-banner);
+    color: var(--cor-destaque-txt);
+    /* Texto escuro */
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--cor-reuso-principal);
+}
+
+.bannerContainer h1 {
+    font-size: 38px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: var(--cor-destaque-txt);
+    font-family: 'Poppins', sans-serif;
+}
+
+.bannerContainer h1 i {
+    font-size: 45px;
+    /* Ícone em Laranja Reuso */
+    color: var(--cor-reuso-principal);
+}
+
+/* Box de Login (Mantido com classe local) */
+.loginBox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.loginBox a {
+    background-color: var(--cor-reuso-suporte);
+    /* Verde Escuro */
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.loginBox a:hover {
+    background-color: #2b7a2e;
+}
+
+/* Nav Bar (CORREÇÃO: USANDO CLASSE LOCAL `.navBar`) */
+.navBar {
+    /* Laranja (Reuso) para contraste */
+    background-color: var(--cor-reuso-principal);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+}
+
+.navBar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.navBar a:hover {
+    text-decoration: underline;
+}
+
+/* Formulário de Frete (Com classe local) */
+.freteForm {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.freteForm input {
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    width: 200px;
+    /* Ajuste para caber o campo a mais */
+    flex-grow: 1;
+}
+
+.freteForm button {
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.freteForm button:hover {
+    background-color: #004c99;
+}
+
+
+/* === Balcão de Negociação (4 cards) === */
+.negociacaoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.negociacaoCard {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    /* Borda do card: Verde Suporte */
+    border: 2px solid var(--cor-reuso-suporte);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.negociacaoCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    /* Hover: Laranja Reuso */
+    border-color: var(--cor-reuso-principal);
+}
+
+.cardDestaque {
+    /* Destaque: Laranja Reuso e Fundo Mais Claro */
+    border-color: var(--cor-reuso-principal);
+    background-color: #fff9e6;
+}
+
+.negociacaoCard h3 {
+    font-size: 20px;
+    color: var(--cor-destaque-txt);
+    margin-top: 0;
+    font-weight: 700;
+}
+
+.negociacaoCard p {
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 50px;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.negociacaoIcon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    /* Ícone Padrão: Verde Suporte */
+    color: var(--cor-reuso-suporte);
+}
+
+.cardDestaque .negociacaoIcon {
+    /* Ícone Destaque: Laranja Reuso */
+    color: var(--cor-reuso-principal);
+}
+
+/* === Estilos Comuns de Botão (Padrão) === */
+.btn {
+    background-color: var(--cor-secundaria);
+    /* Azul Logística */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #004c99;
+}
+
+/* Estilos Botões Específicos do Marketplace */
+.btnAcao {
+    display: block;
+    margin-top: auto;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+
+}
+
+/* Botão Destaque Principal (VENDER) - Laranja Reuso */
+.btnVender {
+    background-color: var(--cor-reuso-principal);
+    color: white;
+    font-weight: 800;
+    box-shadow: 0 6px 15px rgba(255, 152, 0, 0.5);
+}
+
+.btnVender:hover {
+    background-color: #e68900;
+}
+
+/* Botão Secundário (COMPRAR) - Verde Suporte */
+.btnComprar {
+    background-color: var(--cor-reuso-suporte);
+    color: white;
+    box-shadow: 0 4px 10px rgba(56, 142, 60, 0.4);
+}
+
+.btnComprar:hover {
+    background-color: #2e7d32;
+}
+
+/* Botão Negociação de Frete (Amarelo Acento) */
+.btnNegociar {
+    background-color: var(--cor-reuso-acento);
+    color: var(--cor-destaque-txt);
+    font-weight: 800;
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
+}
+
+.btnNegociar:hover {
+    background-color: #ffaa00;
+}
+
+/* Botão Combinado (Cinza da Home) */
+.btnCombinado {
+    background-color: var(--cor-cinza-btn) !important;
+    /* Cor Cinza para Frete Combinado */
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btnCombinado:hover {
+    background-color: #5a6268 !important;
+}
+
+
+/* === Seção de Flexibilidade de Frete === */
+.freteFlexibility {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.freteOption {
+    flex-basis: 48%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--cor-cinza-claro);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Borda: Azul Vivo (Frete BRFrete) */
+    border-top: 5px solid var(--cor-secundaria);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Destaque para a Opção Carga Fechada (Verde Suporte) */
+.freteOption:nth-child(2) {
+    border-top-color: var(--cor-reuso-suporte);
+}
+
+
+.freteOption i {
+    font-size: 40px;
+    color: var(--cor-secundaria);
+    margin-bottom: 10px;
+}
+
+/* Ícone da Opção Carga Fechada (Verde Suporte) */
+.freteOption:nth-child(2) i {
+    color: var(--cor-reuso-suporte);
+}
+
+.freteOption h4 {
+    color: var(--cor-destaque-txt);
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.freteOption p {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+
+/* === Rodapé (CORREÇÃO: USANDO CLASSE LOCAL `.footer`) === */
+.footer {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.footer h4 {
+    /* Corrigido de seletor 'footer h4' para '.footer h4' */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer ul li a {
+    /* Corrigido de seletor 'footer ul li a' para '.footer ul li a' */
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer ul li a:hover {
+    color: white;
+}
+
+.footerBottom {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+
+    .loginBox {
+        position: static;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .navBar {
+        /* Corrigido de seletor 'nav' para '.navBar' */
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .navBar a {
+        /* Corrigido de seletor 'nav a' para '.navBar a' */
+        font-size: 14px;
+    }
+
+    .freteForm {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .freteForm input,
+    .freteForm button {
+        width: 90%;
+    }
+
+    .negociacaoGrid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    @media (max-width: 450px) {
+        .negociacaoGrid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Flexibilidade de Frete - Mudar de linha para coluna */
+    .freteFlexibility {
+        flex-direction: column;
+    }
+
+    .freteOption {
+        flex-basis: 100%;
+    }
+
+    .main {
+        /* Corrigido de seletor 'main' para '.main' */
+        padding: 10px;
+    }
+
+    .bannerContainer h1 {
+        font-size: 26px;
+    }
+
+    .main h2 {
+        font-size: 24px;
+    }
+
+    .btn,
+    .btnAcao {
+        padding: 10px 15px;
+        font-size: 12px;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .negociacaoCard {
+        padding: 15px;
+    }
+}

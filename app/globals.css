@@ -1,0 +1,554 @@
+/* === VARIÁVEIS DE COR PADRÃO BRFRETE === */
+:root {
+  --cor-principal: #003366;
+  /* Azul Marinho Profissional (Fundo/Header/Footer) */
+  --cor-acento: #FF9800;
+  /* Laranja Vibrante (Destaque Principal/CTA/Botões 1ª Seção) */
+
+  /* CORES DE ACENTO POR SEÇÃO - ATUALIZADAS */
+  --cor-sustentavel: #008080;
+  /* Verde Petróleo Sóbrio (Setor/Sustentabilidade) */
+  --cor-logistica: #006699;
+  /* Azul IBM (Categorias de Frete Inteligente) */
+  --cor-social-impacto: #808000;
+  /* Verde Musgo Sóbrio (Inclusão Social) */
+  --cor-ferramentas: #CC0000;
+  /* VERMELHO RED HAT (Ferramentas de Negócio) */
+
+  --cor-destaque-txt: #1a1a1a;
+  --cor-cinza-claro: #f0f0f0;
+  --cor-cinza-btn: #6c757d;
+}
+
+/* === Base === */
+body {
+  margin: 0;
+  font-family: 'Red Hat Display', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+main {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* === Banner (Mantido) === */
+.banner-container {
+  position: relative;
+  background-color: var(--cor-principal);
+  color: white;
+  padding: 60px 20px 80px 20px;
+  text-align: center;
+}
+
+.banner-container h1 {
+  font-size: 45px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 5px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.banner-container h1 i {
+  font-size: 55px;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.banner-container p {
+  font-size: 19px;
+  font-weight: 400;
+  color: #ddd;
+  margin-bottom: 40px;
+}
+
+/* === Login Box (Mantido em um tom de Verde para Login/Cadastro, como distinção de ação) === */
+.login-box {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.login-box a {
+  background-color: var(--cor-sustentavel);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.login-box a:hover {
+  background-color: #006666;
+  /* Tom escuro do verde petróleo */
+}
+
+/* === Navegação (Mantido) === */
+nav {
+  background-color: #004c99;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--cor-sustentavel);
+}
+
+/* === Formulário de Frete (Laranja) === */
+.frete-form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0px auto;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.frete-form input {
+  padding: 12px 16px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  width: 200px;
+  flex-grow: 1;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.frete-form button {
+  background-color: var(--cor-acento);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 152, 0, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.frete-form button:hover {
+  background-color: #e68900;
+  box-shadow: 0 6px 15px rgba(255, 152, 0, 0.6);
+}
+
+
+/* === Conteúdo Principal (Mantido) === */
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+  font-size: 32px;
+  color: var(--cor-principal);
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.section {
+  margin-top: 50px;
+}
+
+.section h3 {
+  font-size: 24px;
+  color: var(--cor-destaque-txt);
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* === Cards (Estilo Base) === */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--cor-cinza-claro);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Padrão para 3 cards por linha nas seções maiores */
+.marketplace-section .card,
+.setor-section .card,
+.categoria-section .card,
+.business-tools-section .card,
+.social-section .card {
+  width: 260px;
+}
+
+/* NOVO: Ajuste para 3 cards por linha na seção Soluções */
+.solucoes-section .card {
+  width: 260px;
+}
+
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  margin: 10px 0;
+  color: var(--cor-principal);
+  font-weight: 700;
+  font-size: 16px;
+  min-height: 40px;
+}
+
+.card p {
+  font-size: 14px;
+  min-height: 40px;
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+/* === Estilo Base do Botão do Card (Comum para todas as seções) === */
+.card-btn {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin-top: auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* === ESTILOS POR SEÇÃO (Borda, Ícone e BOTÃO) === */
+/* ------------------------------------------------------------------ */
+
+/* 1. Marketplaces Integrados e Sustentáveis (Laranja Vibrante - COR ACENTO) */
+.marketplace-section .card {
+  border-top: 5px solid var(--cor-acento);
+}
+
+.marketplace-section .card i {
+  color: var(--cor-acento);
+  margin-bottom: 10px;
+  font-size: 30px !important;
+}
+
+.marketplace-section .card-btn {
+  background-color: var(--cor-acento);
+}
+
+.marketplace-section .card-btn:hover {
+  background-color: #e68900;
+}
+
+
+/* 2. Combinações Estratégicas por Setor (Verde Petróleo Sóbrio - COR SUSTENTÁVEL) */
+/* Esta cor será RE-usada no Soluções para manter o visual profissional e único na sequência */
+.setor-section .card {
+  border-top: 5px solid var(--cor-sustentavel);
+}
+
+.setor-section .card i {
+  color: var(--cor-sustentavel);
+  margin-bottom: 10px;
+  font-size: 30px !important;
+}
+
+.setor-section .card-btn {
+  background-color: var(--cor-sustentavel);
+}
+
+.setor-section .card-btn:hover {
+  background-color: #006666;
+  /* Tom escuro do verde petróleo para hover */
+}
+
+
+/* 3. Categorias de Frete Inteligente (AZUL IBM - COR LOGÍSTICA) */
+.categoria-section .card {
+  border-top: 5px solid var(--cor-logistica);
+}
+
+.categoria-section .card i {
+  color: var(--cor-logistica);
+  margin-bottom: 10px;
+  font-size: 30px !important;
+}
+
+.categoria-section .card-btn {
+  background-color: var(--cor-logistica);
+  color: white;
+  /* Cor de texto alterada para branco para melhor contraste no azul escuro */
+}
+
+.categoria-section .card-btn:hover {
+  background-color: #004c73;
+  /* Tom escuro do Azul IBM para hover */
+  color: white;
+}
+
+/* 4. Soluções Logísticas e Tecnologia (Verde Petróleo Sóbrio - COR SUSTENTÁVEL) - COR ATUALIZADA */
+.solucoes-section .card {
+  border-top: 5px solid var(--cor-sustentavel);
+}
+
+.solucoes-section .card i {
+  color: var(--cor-sustentavel);
+  margin-bottom: 10px;
+  font-size: 30px !important;
+}
+
+.solucoes-section .card-btn {
+  background-color: var(--cor-sustentavel);
+  color: white;
+}
+
+.solucoes-section .card-btn:hover {
+  background-color: #006666;
+  /* Tom escuro do verde petróleo para hover */
+  color: white;
+}
+
+
+/* 5. FERRAMENTAS DE NEGÓCIO (VERMELHO RED HAT - COR FERRAMENTAS) - ESTILO PARA 6 CARDS */
+.business-tools-section .card {
+  border-top: 5px solid var(--cor-ferramentas);
+}
+
+.business-tools-section .card i {
+  color: var(--cor-ferramentas);
+  margin-bottom: 10px;
+  font-size: 30px !important;
+}
+
+.business-tools-section .card-btn {
+  background-color: var(--cor-ferramentas);
+}
+
+.business-tools-section .card-btn:hover {
+  background-color: #990000;
+  /* Tom escuro do Vermelho Red Hat */
+}
+
+/* 6. Inclusão Logística e Impacto Social (Verde Musgo Sóbrio - COR SOCIAL) */
+.social-section .card {
+  border-top: 5px solid var(--cor-social-impacto);
+}
+
+.social-section .card i {
+  color: var(--cor-social-impacto);
+  margin-bottom: 10px;
+  font-size: 30px !important;
+}
+
+.social-section .card-btn {
+  background-color: var(--cor-social-impacto);
+  color: white;
+  /* Texto branco para melhor contraste */
+}
+
+.social-section .card-btn:hover {
+  background-color: #666600;
+  /* Tom mais escuro do verde musgo para hover */
+  color: white;
+  /* Mantém texto branco */
+}
+
+
+/* CTA Destaque (Laranja) */
+/*
+ * Adicione este bloco de código ao seu app/globals.css
+ * Isso define o estilo base da classe global .btn
+ */
+.btn {
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: inline-block;
+  /* Garante que o botão se comporta bem em linha */
+  line-height: 1.2;
+}
+
+.btn:hover {
+  filter: brightness(0.9);
+}
+
+.cta-buttons {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* CTA Destaque (Laranja) */
+/*
+ * Corrigido de "button.cta-destaque" para "a.cta-destaque" (ou apenas ".cta-destaque")
+ * para que o estilo seja aplicado ao componente <Link> (que renderiza <a>).
+ */
+.cta-buttons a.cta-destaque {
+  background-color: var(--cor-acento);
+  padding: 14px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
+  /* A tag <a> não tem border por padrão, mas manteremos o estilo do botão */
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 4px 10px rgba(255, 152, 0, 0.4);
+  margin: 0 auto;
+  display: inline-block;
+  text-decoration: none;
+  /* Adicionado para remover o sublinhado do link */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-buttons a.cta-destaque:hover {
+  background-color: #e68900;
+  box-shadow: 0 6px 15px rgba(255, 152, 0, 0.6);
+}
+
+/* === Rodapé (Mantido o padrão) === */
+footer {
+  background-color: var(--cor-principal);
+  color: white;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+footer h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 8px;
+}
+
+footer ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+footer ul li a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+  .banner-container h1 {
+    font-size: 32px;
+  }
+
+  .banner-container p {
+    font-size: 16px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Garante 1 card por linha no mobile para todas as seções */
+  .card,
+  .business-tools-section .card,
+  .solucoes-section .card {
+    width: 90%;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .frete-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .frete-form input,
+  .frete-form button {
+    width: 90%;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  footer div {
+    border: none;
+    padding: 0;
+  }
+
+  .cta-buttons a.cta-destaque {
+    /* CORRIGIDO AQUI TAMBÉM */
+    width: 90%;
+    padding: 12px 15px;
+    font-size: 16px;
+  }
+}

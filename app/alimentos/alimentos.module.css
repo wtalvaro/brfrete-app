@@ -1,0 +1,493 @@
+/* app/alimentos/alimentos.module.css */
+
+/* === Cores do estilo BRFrete Padrão e TEMA ALIMENTOS === */
+:root {
+    /* Cores do estilo BRFrete Padrão */
+    --cor-principal: #002b5c;
+    /* Azul Escuro (BRFrete) */
+    --cor-secundaria: #0066cc;
+    /* Azul Vivo (Frete) */
+    --cor-acento: #ffc107;
+    /* Amarelo Gema */
+    --cor-suporte: #009688;
+    /* Verde Água */
+    --cor-negociacao: #ff9800;
+    /* Laranja Negociação */
+    --cor-destaque-txt: #1a1a1a;
+    /* Preto Suave */
+    --cor-cinza-claro: #f0f0f0;
+    /* Cor de card da Home */
+    --cor-cinza-btn: #6c757d;
+    /* Cinza para botão secundário/combinado */
+
+    /* NOVAS CORES TEMA ALIMENTOS */
+    --cor-alimentos-principal: #38761d;
+    /* Verde Oliva Escuro - Natureza */
+    --cor-alimentos-acento: #f6b26b;
+    /* Laranja Suave - Colheita */
+    --cor-alimentos-destaque: #cc0000;
+    /* Vermelho Fogo - Sabor, Negócio Quente */
+    --cor-alimentos-suporte: #a64d79;
+    /* Roxo Suave - Artesanal, Doce */
+}
+
+/* Fonte principal para o corpo do conteúdo */
+.main {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main h2 {
+    font-size: 32px;
+    color: var(--cor-destaque-txt);
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 4px solid var(--cor-alimentos-principal);
+    /* Linha do tema */
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.section {
+    margin-top: 50px;
+}
+
+/* === Banner (Ajustado) === */
+.bannerContainer {
+    /* CORRIGIDO: de .banner-container para .bannerContainer */
+    position: relative;
+    background-color: var(--cor-alimentos-principal);
+    /* Cor principal do tema */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.bannerContainer h1 {
+    font-size: 38px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bannerContainer h1 i {
+    font-size: 45px;
+    color: var(--cor-alimentos-acento);
+    /* Destaque Colheita */
+}
+
+/* Login Box */
+.loginBox {
+    /* CORRIGIDO: de .login-box para .loginBox */
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.loginBox a {
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/* Nav Bar (Refatorado de 'nav' para classe '.navBar' para evitar seletor global) */
+.navBar {
+    background-color: #5b9243;
+    /* Tom mais claro do verde para navegação */
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+}
+
+.navBar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Formulário de Frete */
+.freteForm {
+    /* CORRIGIDO: de .frete-form para .freteForm */
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.freteForm input {
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    width: 180px;
+    flex-grow: 1;
+}
+
+.freteForm button {
+    background-color: var(--cor-alimentos-acento);
+    /* Botão de Frete com cor do tema */
+    color: var(--cor-destaque-txt);
+    border: none;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.freteForm button:hover {
+    background-color: #e6a25b;
+}
+
+/* === Balcão de Negociação (4 cards) === */
+.negociacaoGrid {
+    /* CORRIGIDO: de .negociacao-grid para .negociacaoGrid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.negociacaoCard {
+    /* CORRIGIDO: de .negociacao-card para .negociacaoCard */
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border: 2px solid var(--cor-alimentos-principal);
+    /* Borda do tema */
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.negociacaoCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--cor-alimentos-destaque);
+}
+
+.cardDestaque {
+    /* CORRIGIDO: de .card-destaque para .cardDestaque */
+    border-color: var(--cor-alimentos-acento);
+    /* Destaque Colheita */
+    background-color: #fffff6;
+}
+
+.negociacaoCard h3 {
+    font-size: 20px;
+    color: var(--cor-destaque-txt);
+    margin-top: 0;
+    font-weight: 700;
+}
+
+.negociacaoCard p {
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 50px;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.negociacaoIcon {
+    /* CORRIGIDO: de .negociacao-icon para .negociacaoIcon */
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: var(--cor-alimentos-principal);
+    /* Ícones no tema principal */
+}
+
+.cardDestaque .negociacaoIcon {
+    color: var(--cor-alimentos-destaque);
+    /* Destaque no card principal */
+}
+
+/* === Estilos Comuns de Botão === */
+.btn,
+.btnAcao {
+    /* CORRIGIDO: de .btn-acao para .btnAcao */
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.3;
+}
+
+/* Estilos Botões Específicos do Marketplace */
+.btnAcao {
+    display: block;
+    margin-top: auto;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Botão Destaque Principal (VENDER) */
+.btnVender {
+    /* CORRIGIDO: de .btn-vender para .btnVender */
+    background-color: var(--cor-alimentos-destaque);
+    /* Vermelho Sabor */
+    color: white;
+    box-shadow: 0 6px 15px rgba(204, 0, 0, 0.5);
+    font-size: 16px;
+    padding: 12px 25px;
+}
+
+.btnVender:hover {
+    background-color: #990000;
+}
+
+/* Botão Secundário (COMPRAR) */
+.btnComprar {
+    /* CORRIGIDO: de .btn-comprar para .btnComprar */
+    background-color: var(--cor-alimentos-suporte);
+    /* Roxo Suave */
+    color: white;
+    box-shadow: 0 4px 10px rgba(166, 77, 121, 0.4);
+}
+
+.btnComprar:hover {
+    background-color: #8c416a;
+}
+
+/* Botão Negociação de Frete (Laranja do tema) */
+.btnNegociar {
+    /* CORRIGIDO: de .btn-negociar para .btnNegociar */
+    background-color: var(--cor-alimentos-acento);
+    color: var(--cor-destaque-txt);
+    box-shadow: 0 4px 10px rgba(246, 178, 107, 0.4);
+}
+
+.btnNegociar:hover {
+    background-color: #e6a25b;
+}
+
+/* Botão Frete Simples */
+.btnFrete {
+    /* CORRIGIDO: de .btn-frete para .btnFrete */
+    background-color: var(--cor-secundaria);
+}
+
+/* === Seção de Flexibilidade de Frete (Adaptada) === */
+.freteFlexibility {
+    /* CORRIGIDO: de .frete-flexibility para .freteFlexibility */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.freteOption {
+    /* CORRIGIDO: de .frete-option para .freteOption */
+    flex-basis: 48%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--cor-cinza-claro);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--cor-alimentos-principal);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.freteOption:nth-child(2) {
+    border-top-color: var(--cor-alimentos-acento);
+}
+
+.freteOption i {
+    font-size: 40px;
+    color: var(--cor-alimentos-principal);
+    /* Ícones no tema principal */
+    margin-bottom: 10px;
+}
+
+.freteOption:nth-child(2) i {
+    color: var(--cor-alimentos-acento);
+}
+
+.freteOption h4 {
+    color: var(--cor-destaque-txt);
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.freteOption p {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+/* Rodapé (Refatorado de 'footer' para classe '.footer' para evitar seletor global) */
+.footer {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.footer h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer ul li a:hover {
+    color: white;
+}
+
+.footerBottom {
+    /* CORRIGIDO: de .footer-bottom para .footerBottom */
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+
+/* === Responsividade (Ajustada) === */
+@media (max-width: 768px) {
+
+    .loginBox {
+        /* CORRIGIDO: de .login-box para .loginBox */
+        position: static;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .navBar {
+        /* CORRIGIDO: de nav para .navBar */
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .navBar a {
+        font-size: 14px;
+    }
+
+    .freteForm {
+        /* CORRIGIDO: de .frete-form para .freteForm */
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .freteForm input,
+    .freteForm button {
+        width: 90%;
+    }
+
+    .negociacaoGrid {
+        /* CORRIGIDO: de .negociacao-grid para .negociacaoGrid */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    @media (max-width: 450px) {
+        .negociacaoGrid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .freteFlexibility {
+        /* CORRIGIDO: de .frete-flexibility para .freteFlexibility */
+        flex-direction: column;
+    }
+
+    .freteOption {
+        /* CORRIGIDO: de .frete-option para .freteOption */
+        flex-basis: 100%;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    .bannerContainer h1 {
+        /* CORRIGIDO: de .banner-container h1 para .bannerContainer h1 */
+        font-size: 26px;
+    }
+
+    .main h2 {
+        font-size: 24px;
+    }
+
+    .btn,
+    .btnAcao {
+        /* CORRIGIDO: de .btn-acao para .btnAcao */
+        padding: 10px 15px;
+        font-size: 12px;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .negociacaoCard {
+        /* CORRIGIDO: de .negociacao-card para .negociacaoCard */
+        padding: 15px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    /* Mídia query original do HTML refatorada para a classe local */
+    .navBar {
+        gap: 20px;
+    }
+
+    .navBar a {
+        font-size: 14px;
+    }
+}

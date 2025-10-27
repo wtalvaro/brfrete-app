@@ -1,0 +1,473 @@
+/* app/urbano/urbano.module.css */
+
+/* Cores do estilo FRETE URBANO (Foco em Velocidade, Agilidade e Eficiência) */
+:global(:root) {
+    /* Principal: Azul Escuro (BRFrete) - Mantido */
+    --cor-principal: #002b5c;
+    /* Secundária: Azul Vivo (Padrão Frete) - Mantido */
+    --cor-secundaria: #0066cc;
+
+    /* NOVAS CORES: Agilidade e Foco Local */
+    /* Laranja Vibrante (Acento/Velocidade) */
+    --cor-foco-urbano: #FF6F00;
+    /* Verde Petróleo (Eficiência, Sucesso) */
+    --cor-agil: #008080;
+    /* Verde Limão Suave (Local, Comunidade) */
+    --cor-local: #4CAF50;
+    /* Preto Suave */
+    --cor-destaque-txt: #1a1a1a;
+    --cor-cinza-claro: #f0f0f0;
+    --cor-cinza-btn: #6c757d;
+    /* Cores do Footer (Padrão Home) */
+    --cor-footer-link: #ccc;
+}
+
+/* === Base === */
+/* Corresponde ao seletor body */
+.bodyContainer {
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Corresponde ao seletor main */
+.mainContent {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mainContent h2 {
+    font-size: 32px;
+    color: var(--cor-destaque-txt);
+    margin-bottom: 25px;
+    text-align: center;
+    /* Destaque para o Tema: Laranja Vibrante */
+    border-bottom: 4px solid var(--cor-foco-urbano);
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+/* === Banner === */
+.bannerContainer {
+    position: relative;
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    /* Adiciona um gradiente sutil para o tema Urbano */
+    background-image: linear-gradient(135deg, var(--cor-principal) 0%, #004080 100%);
+}
+
+.bannerContainer h1 {
+    font-size: 38px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bannerContainer h1 i {
+    font-size: 45px;
+    /* COR DO ÍCONE: Laranja Vibrante (Velocidade) */
+    color: var(--cor-foco-urbano);
+    text-shadow: 0 0 10px rgba(255, 111, 0, 0.6);
+}
+
+/* Login Box (style inline no HTML original, mas vou modularizar) */
+.loginBox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.loginBox a {
+    /* A: Verde Petróleo (Agil) */
+    background-color: var(--cor-agil);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.loginBox a:nth-child(2) {
+    /* B: Azul Vivo (Secundária) */
+    background-color: var(--cor-secundaria);
+}
+
+.loginBox a:hover {
+    background-color: #006666;
+}
+
+.loginBox a:nth-child(2):hover {
+    background-color: #0052a3;
+}
+
+/* Nav Bar - Cor Principal da BRFrete */
+.navBar {
+    background-color: #004080;
+    display: flex;
+    justify-content: center;
+    /* Espaçamento mais dinâmico para caber mais itens */
+    gap: 20px;
+    padding: 15px;
+}
+
+.navBar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    /* Garante que os links não quebrem o texto em linhas estranhas */
+    white-space: nowrap;
+}
+
+.navBar a:hover {
+    text-decoration: underline;
+    color: var(--cor-foco-urbano);
+}
+
+/* Formulário de Frete (Adaptado) */
+.freteForm {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.freteForm input {
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    width: 180px;
+    flex-grow: 1;
+}
+
+.freteForm button {
+    background-color: var(--cor-foco-urbano);
+    /* Botão Principal de Ação: Laranja Vibrante */
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.freteForm button:hover {
+    background-color: #e66400;
+}
+
+
+.section {
+    margin-top: 50px;
+}
+
+/* === Grid de Vantagens (4 cards) === */
+.vantagensGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.vantagemCard {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    /* Borda do card: Verde Petróleo (Eficiência) */
+    border: 2px solid var(--cor-agil);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.vantagemCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    /* Hover: Laranja Vibrante (Acento) */
+    border-color: var(--cor-foco-urbano);
+}
+
+.vantagemIcon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    /* Ícone Padrão: Verde Petróleo */
+    color: var(--cor-agil);
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #e6f5f5;
+}
+
+.vantagemCard:hover .vantagemIcon {
+    color: var(--cor-foco-urbano);
+    background-color: #fff0e0;
+}
+
+.vantagemCard h3 {
+    font-size: 20px;
+    color: var(--cor-destaque-txt);
+    margin-top: 0;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+.vantagemCard p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    flex-grow: 1;
+}
+
+/* Estilos Comuns de Botão */
+.btnAcao {
+    background-color: var(--cor-foco-urbano);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(255, 111, 0, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.btnAcao:hover {
+    background-color: #e66400;
+}
+
+/* Botão Secundário - Verde Petróleo (Agil) */
+.btnSecundario {
+    background-color: var(--cor-agil);
+    box-shadow: 0 4px 10px rgba(0, 128, 128, 0.4);
+}
+
+.btnSecundario:hover {
+    background-color: #006666;
+}
+
+
+/* === Seção de Soluções (2 colunas) === */
+.solucoesGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.solucaoInfo {
+    padding: 20px 0;
+}
+
+.solucaoInfo h3 {
+    font-size: 28px;
+    color: var(--cor-agil);
+    /* Título em Verde Petróleo */
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.solucaoInfo p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.checklist {
+    list-style: none;
+    padding: 0;
+    font-size: 15px;
+}
+
+.checklist li {
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 600;
+}
+
+.checklist li i {
+    color: var(--cor-foco-urbano);
+    /* Checkmark Laranja */
+    margin-right: 10px;
+}
+
+.solucaoImgCard {
+    background-color: var(--cor-cinza-claro);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border: 3px solid var(--cor-foco-urbano);
+}
+
+.solucaoImgCard h4 {
+    font-size: 24px;
+    color: var(--cor-principal);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.solucaoImgCard i {
+    font-size: 60px;
+    color: var(--cor-foco-urbano);
+    margin-bottom: 15px;
+}
+
+.solucaoImgCard p {
+    text-align: center;
+    color: #555;
+}
+
+/* === Rodapé (Ajustado para 5 Colunas) === */
+.footer {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    /* Padrão para telas menores (2 a 3 colunas) */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    font-family: 'Red Hat Display', sans-serif;
+    margin-top: 40px;
+    display: grid;
+}
+
+/* Estilo FIXO para 5 colunas em telas grandes (desktop) */
+@media (min-width: 1100px) {
+    .footer {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.footer h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer ul li a {
+    color: var(--cor-footer-link);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer ul li a:hover {
+    color: var(--cor-foco-urbano);
+    /* Hover: Laranja Urbano */
+}
+
+.socialIcon {
+    margin-right: 8px;
+    width: 20px;
+    text-align: center;
+}
+
+.footerBottom {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+    .loginBox {
+        position: static;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .navBar {
+        flex-wrap: wrap;
+        /* Reduz o espaçamento para mobile */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    /* Reduz o tamanho da fonte da nav para mobile */
+    .navBar a {
+        font-size: 12px;
+        padding: 5px 0;
+    }
+
+    .freteForm {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .freteForm input,
+    .freteForm button {
+        width: 90%;
+    }
+
+    .vantagensGrid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .solucoesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .mainContent {
+        padding: 10px;
+    }
+
+    .bannerContainer h1 {
+        font-size: 26px;
+    }
+
+    .mainContent h2 {
+        font-size: 24px;
+    }
+
+    .solucaoInfo h3 {
+        font-size: 24px;
+    }
+
+    .btnAcao {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}

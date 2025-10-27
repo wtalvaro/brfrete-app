@@ -1,0 +1,527 @@
+/* app/comunidades/comunidades.module.css */
+
+/* Cores do estilo FRETE COMUNITÁRIO (Foco em Apoio, Rateio e Acessibilidade) */
+:root {
+	/* Principal: VERDE FLORESTA (Apoio Comunitário, Social) - NOVO DESTAQUE */
+	--cor-principal: #228B22;
+	/* Secundária: MARROM TERRA PROFUNDO (Base, Confiança) - NOVO DESTAQUE */
+	--cor-secundaria: #4B3621;
+
+	/* NOVAS CORES: Rural e Acento Acessível */
+	/* Acento Principal: Dourado Terroso (Valor do Produto, Custo-Benefício) */
+	--cor-foco-rural: #D4AF37;
+	/* Terra/Bege Suave (Fundo, Confiança) */
+	--cor-confianca-rural: #F5DEB3;
+	/* Laranja Escuro (Urgência Acessível) */
+	--cor-urgencia-rural: #CC5500;
+	--cor-destaque-txt: #1a1a1a;
+	/* Preto Suave */
+	--cor-cinza-claro: #f0f0f0;
+	--cor-cinza-btn: #6c757d;
+	/* Cores do Footer (Padrão Home) */
+	--cor-footer-link: #ccc;
+	--cor-footer-hover: white;
+}
+
+/* Os estilos globais como body e font-family DEVEM ser aplicados em layout.js ou globals.css */
+
+/* Estilo do container principal (Refatorado de .banner-container para .bannerContainer) */
+.bannerContainer {
+	position: relative;
+	/* Cor do Banner: VERDE FLORESTA */
+	background-color: var(--cor-principal);
+	color: white;
+	padding: 40px 20px;
+	text-align: center;
+	/* Gradiente do Verde mais claro para o Verde mais escuro */
+	background-image: linear-gradient(135deg, #3CB371 0%, var(--cor-principal) 100%);
+}
+
+.bannerContainer h1 {
+	font-size: 38px;
+	font-weight: 800;
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 10px;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+}
+
+.bannerContainer h1 i {
+	font-size: 45px;
+	/* COR DO ÍCONE AJUSTADA PARA O Dourado Terroso */
+	color: var(--cor-foco-rural);
+	text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+
+/* Login Box (Refatorado de .login-box para .loginBox) */
+.loginBox {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	display: flex;
+	gap: 15px;
+}
+
+.loginBox a {
+	/* Botões em Marrom Terra (Cor Secundária) */
+	background-color: var(--cor-secundaria);
+	color: white;
+	padding: 8px 14px;
+	border-radius: 4px;
+	font-size: 14px;
+	text-decoration: none;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+	transition: background-color 0.3s ease;
+}
+
+.loginBox a:hover {
+	background-color: #3b2a1a;
+}
+
+/* Nav Bar (Refatorado para .navBar - mantido o seletor nativo 'nav' no HTML, mas aqui seletor de classe para CSS Module) */
+.navBar {
+	/* Cor do Menu: MARROM TERRA */
+	background-color: var(--cor-secundaria);
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	padding: 15px;
+}
+
+.navBar a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 16px;
+	white-space: nowrap;
+}
+
+.navBar a:hover {
+	text-decoration: underline;
+	/* Hover com o Dourado Terroso */
+	color: var(--cor-foco-rural);
+}
+
+/* Formulário de Frete (Refatorado de .frete-form para .freteForm) */
+.freteForm {
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	flex-wrap: wrap;
+}
+
+.freteForm input {
+	padding: 10px 14px;
+	border-radius: 4px;
+	border: none;
+	font-size: 14px;
+	width: 180px;
+	flex-grow: 1;
+}
+
+/* Botão Principal do Banner (Refatorado de .btn-solicitar-rural para .btnSolicitarRural) */
+.freteForm button {
+	/* Botão Principal do Banner: CORRIGIDO para Marrom Terra Profundo */
+	background-color: var(--cor-secundaria);
+	/* Cor do texto: CORRIGIDO para branco para alto contraste */
+	color: white;
+	border: none;
+	padding: 10px 14px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	box-shadow: 0 2px 6px rgba(75, 54, 33, 0.6);
+	/* Sombra marrom */
+	transition: background-color 0.3s ease;
+}
+
+.freteForm button:hover {
+	background-color: #3b2a1a;
+}
+
+/* === Conteúdo Principal (Refatorado de main para .mainContent) === */
+.mainContent {
+	max-width: 1200px;
+	margin: 40px auto;
+	padding: 20px;
+	background-color: white;
+	border-radius: 12px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	font-family: 'Poppins', sans-serif;
+}
+
+.mainContent h2 {
+	font-size: 32px;
+	color: var(--cor-destaque-txt);
+	margin-bottom: 25px;
+	text-align: center;
+	/* Destaque para o Tema: Verde Floresta (Cor Principal) */
+	border-bottom: 4px solid var(--cor-principal);
+	padding-bottom: 10px;
+	font-weight: 700;
+}
+
+/* Seção (Refatorado de .section para .section) */
+.section {
+	margin-top: 50px;
+}
+
+/* === Balcão de Negociação (4 cards) - Refatorado de .negociacao-grid para .negociacaoGrid === */
+.negociacaoGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 25px;
+	margin-top: 40px;
+}
+
+/* Refatorado de .negociacao-card para .negociacaoCard */
+.negociacaoCard {
+	background-color: #ffffff;
+	padding: 25px;
+	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	text-align: center;
+	/* Borda do card: Verde Floresta (Cor Principal) */
+	border: 2px solid var(--cor-principal);
+	transition: all 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.negociacaoCard:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+	/* Hover: Dourado Terroso */
+	border-color: var(--cor-foco-rural);
+}
+
+/* Refatorado de .card-destaque para .cardDestaque */
+.cardDestaque {
+	/* Destaque: Dourado Terroso e Fundo Bege Suave */
+	border-color: var(--cor-foco-rural);
+	background-color: var(--cor-confianca-rural);
+}
+
+.negociacaoCard h3 {
+	font-size: 20px;
+	color: var(--cor-destaque-txt);
+	margin-top: 0;
+	font-weight: 700;
+	word-break: break-word;
+}
+
+.negociacaoCard p {
+	font-size: 14px;
+	line-height: 1.6;
+	min-height: 50px;
+	color: #555;
+	flex-grow: 1;
+	margin-bottom: 15px;
+}
+
+/* Refatorado de .negociacao-icon para .negociacaoIcon */
+.negociacaoIcon {
+	font-size: 40px;
+	margin-bottom: 15px;
+	/* Ícone Padrão: Verde Floresta (Cor Principal) */
+	color: var(--cor-principal);
+}
+
+.cardDestaque .negociacaoIcon {
+	/* Ícone Destaque: Dourado Terroso */
+	color: var(--cor-foco-rural);
+}
+
+/* Estilos Comuns de Botão (Refatorado de .btn para .btn) */
+.btn,
+/* Refatorado de .btn-acao para .btnAcao */
+.btnAcao {
+	/* Botões em Verde Floresta (Cor Principal) */
+	background-color: var(--cor-principal);
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+	display: inline-block;
+	margin-top: 15px;
+}
+
+.btn:hover {
+	background-color: #1a6b1a;
+}
+
+/* Estilos Botões Específicos */
+.btnAcao {
+	display: block;
+	margin-top: auto;
+	padding: 10px 20px;
+	font-size: 14px;
+	font-weight: 700;
+	border-radius: 8px;
+}
+
+/* Botão Destaque Principal (Refatorado de .btn-solicitar-rural para .btnSolicitarRural) */
+.btnSolicitarRural {
+	background-color: var(--cor-principal);
+	color: white;
+	font-weight: 800;
+	box-shadow: 0 6px 15px rgba(34, 139, 34, 0.5);
+}
+
+.btnSolicitarRural:hover {
+	background-color: #1a6b1a;
+}
+
+/* Botão Secundário (Refatorado de .btn-rastrear para .btnRastrear) */
+.btnRastrear {
+	background-color: var(--cor-secundaria);
+	color: white;
+	font-weight: 800;
+	box-shadow: 0 4px 10px rgba(75, 54, 33, 0.4);
+}
+
+.btnRastrear:hover {
+	background-color: #3b2a1a;
+	color: white;
+}
+
+/* Botão Urgência/Manutenção (Refatorado de .btn-urgencia-rural para .btnUrgenciaRural) */
+.btnUrgenciaRural {
+	background-color: var(--cor-urgencia-rural);
+	color: white;
+	font-weight: 800;
+	box-shadow: 0 4px 10px rgba(204, 85, 0, 0.4);
+}
+
+.btnUrgenciaRural:hover {
+	background-color: #b84c00;
+}
+
+/* Botão Padrão (Refatorado de .btn-principal-rural para .btnPrincipalRural) */
+.btnPrincipalRural {
+	background-color: var(--cor-principal) !important;
+	color: white !important;
+	font-weight: 800;
+	box-shadow: 0 4px 10px rgba(34, 139, 34, 0.4);
+}
+
+.btnPrincipalRural:hover {
+	background-color: #1a6b1a !important;
+	color: white !important;
+}
+
+
+/* === Seção de Flexibilidade de Frete (Refatorado de .servicos-flex para .servicosFlex) === */
+.servicosFlex {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	margin-top: 40px;
+	text-align: center;
+}
+
+/* Refatorado de .servico-card para .servicoCard */
+.servicoCard {
+	flex-basis: 48%;
+	padding: 30px;
+	border-radius: 10px;
+	/* Fundo levemente Bege Suave */
+	background-color: #fffaf0;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	/* Borda Dourado Terroso */
+	border-top: 5px solid var(--cor-foco-rural);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	transition: transform 0.3s ease;
+}
+
+.servicoCard:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para o segundo card (Entrega Rápida) */
+.servicoCard:nth-child(2) {
+	/* Borda Verde Floresta (Cor Principal) */
+	border-top-color: var(--cor-principal);
+	/* Fundo Verde Mais Claro */
+	background-color: #f0fff0;
+}
+
+
+.servicoCard i {
+	font-size: 40px;
+	/* Ícone Card 1: Dourado Terroso */
+	color: var(--cor-foco-rural);
+	margin-bottom: 10px;
+}
+
+/* Ícone do Card 2: Verde Floresta (Cor Principal) */
+.servicoCard:nth-child(2) i {
+	color: var(--cor-principal);
+}
+
+.servicoCard h4 {
+	color: var(--cor-destaque-txt);
+	margin-top: 0;
+	font-size: 20px;
+	font-weight: 700;
+	word-break: break-word;
+}
+
+.servicoCard p {
+	flex-grow: 1;
+	margin-bottom: 15px;
+	font-size: 15px;
+	color: #555;
+}
+
+/* Título da Seção de Flexibilidade (Refatorado de .titulo-flex para .tituloFlex) */
+.tituloFlex {
+	/* Destaque em Dourado Terroso */
+	color: var(--cor-foco-rural);
+	font-weight: 800;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
+
+/* Botões da seção Flexibilidade (Refatorado de .btn-flex para .btnFlex) */
+.btnFlex {
+	padding: 12px 25px;
+	font-size: 15px;
+	font-weight: 800;
+	border-radius: 8px;
+	margin-top: 15px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	display: block;
+	text-decoration: none;
+}
+
+/* Botão 1: CORRIGIDO para Verde Floresta (Rateio) */
+.servicoCard:first-child .btnFlex {
+	background-color: var(--cor-principal);
+	/* CORRIGIDO para branco */
+	color: white;
+	box-shadow: 0 4px 10px rgba(34, 139, 34, 0.5);
+}
+
+.servicoCard:first-child .btnFlex:hover {
+	background-color: #1a6b1a;
+	color: white;
+}
+
+/* Botão 2: Verde Floresta (Entrega Imediata) - Mantido */
+.servicoCard:nth-child(2) .btnFlex {
+	background-color: var(--cor-principal);
+	color: white;
+	box-shadow: 0 4px 10px rgba(34, 139, 34, 0.4);
+}
+
+.servicoCard:nth-child(2) .btnFlex:hover {
+	background-color: #1a6b1a;
+}
+
+
+/* === Rodapé (Ajustado para 5 colunas e cores Comunitárias) === */
+.footer {
+	/* Cor do Footer: VERDE FLORESTA (Cor Principal) */
+	background-color: var(--cor-principal);
+	color: white;
+	padding: 40px 20px;
+	display: grid;
+	/* Força 5 colunas em telas maiores */
+	grid-template-columns: repeat(5, 1fr);
+	gap: 30px;
+	font-family: 'Red Hat Display', sans-serif;
+	margin-top: 40px;
+}
+
+@media (max-width: 1200px) {
+
+	/* Adaptação para telas médias */
+	.footer {
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	}
+}
+
+@media (max-width: 768px) {
+
+	/* Adaptação para telas menores */
+	.footer {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	}
+
+	/* Nav Bar */
+	.navBar {
+		flex-wrap: wrap;
+		gap: 15px;
+	}
+
+	.navBar a {
+		font-size: 14px;
+	}
+
+	/* Banner */
+	.loginBox {
+		position: static;
+		justify-content: center;
+		margin-bottom: 15px;
+	}
+
+	.bannerContainer {
+		padding-top: 20px;
+	}
+
+	.freteForm {
+		flex-direction: column;
+	}
+
+	.freteForm input,
+	.freteForm button {
+		width: 100%;
+		max-width: 350px;
+	}
+
+	/* Main Content */
+	.mainContent {
+		margin: 20px 10px;
+		padding: 15px;
+	}
+
+	/* Grids */
+	.negociacaoGrid {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	/* Flex */
+	.servicosFlex {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.servicoCard {
+		flex-basis: 100%;
+	}
+}
+
+/* Rodapé Inferior (Refatorado de .footer-bottom para .footerBottom) */
+.footerBottom {
+	grid-column: 1 / -1;
+	text-align: center;
+	margin-top: 30px;
+	font-size: 14px;
+	color: #aaa;
+}

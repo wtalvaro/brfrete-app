@@ -1,0 +1,608 @@
+/* app/balcao-local/balcao-local.module.css */
+
+/* === VARIÁVEIS DE COR PADRÃO BRFRETE E TEMA LOCAL === */
+:root {
+    --cor-principal: #002b5c;
+    /* Azul Escuro (BRFrete) - Mantido para Footer */
+    --cor-secundaria: #0066cc;
+    /* Azul Vivo (Frete) - Mantido para botões padrão BRFrete */
+
+    /* NOVAS CORES: Foco em Renda e Local */
+    --cor-renda: #FF7043;
+    /* Laranja/Vermelho Coral (Renda, Paixão, Venda) */
+    --cor-comunidade: #4CAF50;
+    /* Verde (Crescimento, Local, Frescor) */
+    --cor-acento: #FFD700;
+    /* Amarelo Ouro (Destaque, Energia) */
+    --cor-destaque-txt: #1a1a1a;
+    /* Preto Suave */
+    --cor-cinza-claro: #f0f0f0;
+    /* Cor de card da Home */
+    --cor-cinza-btn: #6c757d;
+    /* Cinza para botão secundário/combinado */
+    --cor-navegacao-bg: #388E3C;
+    /* Novo Verde Escuro para Navegação */
+}
+
+/* Fonte principal para o corpo do conteúdo */
+.mainContent {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* === Banner (Fundo Verde Comunidade) - .banner-container -> .bannerContainer === */
+.bannerContainer {
+    position: relative;
+    background-color: var(--cor-comunidade);
+    /* Verde Comunidade */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.bannerContainer h1 {
+    font-size: 38px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bannerContainer h1 i {
+    font-size: 45px;
+    color: var(--cor-acento);
+    /* Amarelo Ouro */
+}
+
+/* Login Box - .login-box -> .loginBox */
+.loginBox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.loginBox a {
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.loginBox a:hover {
+    background-color: #004c99;
+}
+
+/* Nav Bar - nav -> .navBar */
+.navBar {
+    background-color: var(--cor-navegacao-bg);
+    /* Verde Escuro */
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+}
+
+.navBar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navBar a:hover {
+    text-decoration: underline;
+    color: var(--cor-acento);
+    /* Amarelo Ouro no hover */
+}
+
+/* Destaque para o link ativo (usado no componente para o link /balcao-local) */
+/* No Next.js real, você usaria `usePathname` para aplicar esta classe condicionalmente */
+.navBar a:nth-child(3) {
+    /* Aplica a classe para o link "Lojas Locais" que seria o ativo */
+    color: var(--cor-renda);
+    /* Laranja Renda */
+    border-bottom: 3px solid var(--cor-renda);
+    padding-bottom: 2px;
+}
+
+
+/* Formulário de Frete - .frete-form -> .freteForm */
+.freteForm {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.freteForm input {
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    width: 180px;
+    flex-grow: 1;
+}
+
+.freteForm button {
+    background-color: var(--cor-renda);
+    /* Laranja Renda */
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.freteForm button:hover {
+    background-color: #cc5a35;
+}
+
+
+/* === Conteúdo Principal - main -> .mainContent === */
+.mainContent {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mainContent h2 {
+    font-size: 32px;
+    color: var(--cor-destaque-txt);
+    margin-bottom: 25px;
+    text-align: center;
+    /* Destaque em Laranja Renda */
+    border-bottom: 4px solid var(--cor-renda);
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.section {
+    margin-top: 50px;
+}
+
+/* Estilo para o parágrafo da seção (estilo inline) */
+.sectionParagraph {
+    text-align: center;
+    font-size: 17px;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: #444;
+    font-weight: 400;
+}
+
+
+/* === Balcão de Negociação (4 cards) - .negociacao-grid -> .negociacaoGrid === */
+.negociacaoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* .negociacao-card -> .negociacaoCard */
+.negociacaoCard {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    /* Borda principal é Verde Comunidade */
+    border: 2px solid var(--cor-comunidade);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.negociacaoCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    /* Hover em Amarelo Ouro */
+    border-color: var(--cor-acento);
+}
+
+/* .card-destaque -> .cardDestaque */
+.cardDestaque {
+    border-color: var(--cor-renda);
+    /* Laranja Renda para o principal */
+    background-color: #fff8f5;
+}
+
+/* Card com borda acento (o terceiro card) */
+.negociacaoCardAcento {
+    border-color: var(--cor-acento);
+}
+
+.negociacaoCard h3 {
+    font-size: 20px;
+    color: var(--cor-destaque-txt);
+    margin-top: 0;
+    font-weight: 700;
+}
+
+.negociacaoCard p {
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 50px;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+/* .negociacao-icon -> .negociacaoIcon */
+.negociacaoIcon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: var(--cor-comunidade);
+    /* Padrão Verde */
+}
+
+/* Classes para controlar a cor específica dos ícones */
+.cardDestaque .negociacaoIcon,
+.iconRenda {
+    color: var(--cor-renda) !important;
+    /* Laranja Renda */
+}
+
+.iconAcento {
+    color: var(--cor-acento) !important;
+    /* Amarelo Ouro */
+}
+
+.iconComunidade {
+    color: var(--cor-comunidade) !important;
+    /* Verde Comunidade */
+}
+
+/* O segundo card usa o ícone com cor acento */
+.negociacaoGrid .negociacaoCard:nth-child(2) .negociacaoIcon {
+    color: var(--cor-acento) !important;
+}
+
+
+/* === Estilos Comuns de Botão === */
+/* .btn -> .btn, .btn-acao -> .btnAcao */
+.btn,
+.btnAcao {
+    background-color: var(--cor-secundaria);
+    /* Azul Vivo Padrão */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.btn:hover {
+    background-color: #004c99;
+}
+
+.btnAcao {
+    display: block;
+    margin-top: auto;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+/* Botão Destaque Principal - .btn-vender-local -> .btnVenderLocal */
+.btnVenderLocal {
+    background-color: var(--cor-renda);
+    /* Laranja Renda */
+    color: white;
+    font-weight: 800;
+    box-shadow: 0 6px 15px rgba(255, 112, 67, 0.5);
+}
+
+.btnVenderLocal:hover {
+    background-color: #e6663f;
+}
+
+/* Botão Secundário - .btn-comprar-local -> .btnComprarLocal */
+.btnComprarLocal {
+    background-color: var(--cor-comunidade);
+    /* Verde Comunidade */
+    color: white;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
+}
+
+.btnComprarLocal:hover {
+    background-color: #43a047;
+}
+
+/* Botão de Desconto (o terceiro card usa a cor Renda) */
+.btnDescontoRenda {
+    background-color: var(--cor-renda) !important;
+    color: white !important;
+}
+
+/* Botão Treinamento - .btn-treinamento -> .btnTreinamento */
+.btnTreinamento {
+    background-color: var(--cor-acento);
+    /* Amarelo Ouro */
+    color: var(--cor-destaque-txt);
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
+}
+
+.btnTreinamento:hover {
+    background-color: #e6c200;
+}
+
+/* Botão Frete Protegido - .btn-combinado -> .btnCombinado */
+.btnCombinado {
+    background-color: var(--cor-cinza-btn) !important;
+    color: white !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btnCombinado:hover {
+    background-color: #5a6268 !important;
+}
+
+
+/* === Seção de Flexibilidade de Frete === */
+/* .frete-flexibility -> .freteFlexibility */
+.freteFlexibility {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* .frete-option -> .freteOption */
+.freteOption {
+    flex-basis: 48%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--cor-cinza-claro);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Borda principal - Verde Comunidade */
+    border-top: 5px solid var(--cor-comunidade);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Estilo para a opção 1 (Cor Comunidade/Verde) */
+.freteOptionComunidade i {
+    color: var(--cor-comunidade);
+}
+
+/* Estilo para a opção 2 (Cor Renda/Laranja) */
+.freteOptionRenda {
+    border-top-color: var(--cor-renda);
+}
+
+.freteOptionRenda i {
+    color: var(--cor-renda);
+}
+
+
+.freteOption i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.freteOption h4 {
+    color: var(--cor-destaque-txt);
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.freteOption p {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+/* Seção de Destaque - estilo inline movido */
+.sectionHighlight {
+    padding: 20px 0;
+    background-color: #fcfcfc;
+    border-radius: 10px;
+}
+
+/* Título de seção com cor Comunidade - estilo inline movido */
+.sectionTitleComunidade {
+    text-align: center;
+    color: var(--cor-comunidade);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* Título de seção normal - estilo inline movido */
+.sectionTitleNormal {
+    color: var(--cor-destaque-txt);
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+}
+
+
+/* Wrapper para o CTA de baixo */
+.ctaWrapper {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* CTA Destaque Grande */
+.ctaLarge {
+    font-size: 18px;
+}
+
+/* === Histórias de Sucesso - estilo inline movido === */
+.sucessoCard {
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+.sucessoCard i {
+    font-size: 30px;
+}
+
+.sucessoCardTitle {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+
+/* === Rodapé e Responsividade === */
+/* footer -> .footer */
+.footer {
+    background-color: var(--cor-principal);
+    /* Azul Escuro BRFrete */
+    color: white;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    font-family: 'Red Hat Display', sans-serif;
+    margin-top: 40px;
+}
+
+.footer h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer ul li a:hover {
+    color: white;
+}
+
+/* .footer-bottom -> .footerBottom */
+.footerBottom {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+
+    .loginBox {
+        position: static;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .navBar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .navBar a {
+        font-size: 14px;
+    }
+
+    /* Ajuste de link ativo para mobile */
+    .navBar a:nth-child(3) {
+        color: var(--cor-destaque-txt);
+        background-color: var(--cor-renda);
+        border-radius: 4px;
+        border-bottom: none;
+        padding: 5px 10px;
+    }
+
+
+    .freteForm {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .freteForm input,
+    .freteForm button {
+        width: 90%;
+    }
+
+    .negociacaoGrid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    @media (max-width: 450px) {
+        .negociacaoGrid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Flexibilidade de Frete - Mudar de linha para coluna */
+    .freteFlexibility {
+        flex-direction: column;
+    }
+
+    .freteOption {
+        flex-basis: 100%;
+    }
+
+    .mainContent {
+        padding: 10px;
+    }
+
+    .bannerContainer h1 {
+        font-size: 26px;
+    }
+
+    .mainContent h2 {
+        font-size: 24px;
+    }
+
+    .btn,
+    .btnAcao {
+        font-size: 12px;
+        padding: 8px 10px;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .negociacaoCard {
+        padding: 15px;
+    }
+}

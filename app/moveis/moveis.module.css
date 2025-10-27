@@ -1,0 +1,311 @@
+/* app/moveis/moveis.module.css */
+
+/* === VARIÁVEIS DE COR ESPECÍFICAS DESTE MÓDULO === */
+:global(:root) {
+    /* Cores do estilo Móveis & Decoração (Foco em Reutilização/Artesanato) */
+    --cor-principal: #002b5c;
+    /* Azul Escuro (BRFrete) */
+    --cor-secundaria: #0066cc;
+    /* Azul Vivo (Frete) */
+
+    /* NOVAS CORES: Reforma, Reuso e Crescimento */
+    --cor-acento: #A0522D;
+    /* Marrom Madeira (Reforma/Restauração) */
+    --cor-suporte: #66BB6A;
+    /* Verde Menta Suave (Criatividade/Reaproveitamento) */
+    --cor-negociacao: #ff9800;
+    /* Laranja (Negociação/Barganha) */
+    --cor-destaque-txt: #1a1a1a;
+    /* Preto Suave */
+    --cor-cinza-claro: #f0f0f0;
+    /* Cor de card da Home */
+    --cor-cinza-btn: #6c757d;
+    /* Cinza para botão secundário/combinado */
+}
+
+/* === Base (Mantida a fonte Poppins para o Main) === */
+.main {
+    font-family: var(--font-poppins), sans-serif;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* === Banner (Adaptado para o Tema) === */
+.bannerContainer {
+    position: relative;
+    background-color: var(--cor-acento);
+    /* Marrom Madeira */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.bannerContainer h1 {
+    font-size: 38px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: var(--font-poppins), sans-serif;
+}
+
+/* Ícone: Laranja de Negociação */
+.bannerContainer h1 i {
+    font-size: 45px;
+    color: var(--cor-negociacao);
+}
+
+.bannerContainer p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+}
+
+/* Login Box */
+.loginBox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.loginBox a {
+    /* Fundo Azul Escuro para contraste máximo no banner marrom */
+    background-color: #1a2a47;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.loginBox a:hover {
+    background-color: var(--cor-principal);
+}
+
+/* Nav Bar - Cor Verde Menta Escuro */
+.navBar {
+    background-color: #4CAF50;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+}
+
+.navBar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navBar a:hover {
+    color: var(--cor-negociacao);
+    /* Laranja de Negociação no Hover */
+}
+
+/* Formulário de Frete */
+.freteForm {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 30px auto 0;
+}
+
+.freteForm input,
+.freteForm select {
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    width: 180px;
+    flex-grow: 1;
+}
+
+.freteForm button {
+    /* Botão Verde Escuro (do tema reuso) para forte destaque */
+    background-color: var(--cor-suporte);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.freteForm button:hover {
+    background-color: #4CAF50;
+}
+
+/* Seção de Destaque */
+.sectionTitle {
+    font-size: 32px;
+    color: var(--cor-destaque-txt);
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.cardItem {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--cor-acento);
+    /* Marrom Madeira */
+}
+
+.cardItem:hover {
+    transform: translateY(-5px);
+}
+
+.cardItem i {
+    font-size: 50px;
+    color: var(--cor-suporte);
+    /* Verde Menta Suave */
+    margin-bottom: 15px;
+}
+
+.cardItem h3 {
+    font-size: 22px;
+    color: var(--cor-destaque-txt);
+    font-weight: 700;
+    margin-top: 0;
+}
+
+.cardItem p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* CTA - Contato com Especialista */
+.ctaContainer {
+    margin: 60px auto 40px auto;
+    padding: 40px;
+    background-color: var(--cor-cinza-claro);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.ctaContainer h2 {
+    color: var(--cor-acento);
+    /* Marrom Madeira */
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.ctaContainer a {
+    background-color: var(--cor-negociacao);
+    /* Laranja Negociação */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.ctaContainer a:hover {
+    background-color: #e68a00;
+}
+
+
+/* === Rodapé (Footer) - PADRÃO COMPLETO === */
+.footerContainer {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    font-family: var(--font-red-hat-display), sans-serif;
+    margin-top: 40px;
+}
+
+.footerContainer h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footerContainer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerContainer ul li {
+    margin-bottom: 8px;
+}
+
+.footerContainer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footerContainer ul li a:hover {
+    color: white;
+}
+
+.footerBottom {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+    .bannerContainer h1 {
+        font-size: 30px;
+    }
+
+    .bannerContainer h1 i {
+        font-size: 35px;
+    }
+
+    .loginBox {
+        position: static;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .navBar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .freteForm {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
