@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Next.js: Debug Client-Side (Firefox)",
+            "type": "firefox", // O tipo de depurador que você instalou
+            "request": "launch",
+            "reAttach": true,
+            "url": "http://localhost:3000", // Porta padrão do Next.js
+            "webRoot": "${workspaceFolder}",
+            "pathMappings": [
+                {
+                    "url": "webpack:///",
+                    "path": "${webRoot}/"
+                }
+            ],
+            // Você deve garantir que o servidor Next.js esteja rodando antes
+            // Para maior comodidade, você pode adicionar uma configuração Node
+            "preLaunchTask": "npm run dev"
+        }
+    ]
+}

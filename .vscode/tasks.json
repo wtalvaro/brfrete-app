@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "npm run dev",
+            "type": "npm",
+            "script": "dev",
+            "isBackground": true,
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": {
+                "owner": "typescript",
+                "pattern": "$tsc",
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Compiling...",
+                    "endsPattern": "Compiled successfully"
+                }
+            }
+        }
+    ]
+}
